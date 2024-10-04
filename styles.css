@@ -1,0 +1,119 @@
+* {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: #fff;
+}
+
+body {
+	margin: 0;
+}
+
+nav#navbar {
+	position: fixed;
+	width: 100%;
+	height: 10vh;
+	display: flex;
+	align-items: center;
+	background-color: #333834;
+	top: 0px;
+	left: 0px;
+	border-bottom: solid white 1px;
+	overflow-y: clip;
+	z-index: 10;
+	box-shadow: black 0px 0.5vh 20px;
+	transition: top 0.7s;
+}
+
+nav>a {
+    flex: 1;
+    background-color: inherit;
+    height: 100%;
+    overflow-y: hidden;
+    text-decoration: none;
+}
+
+nav>a>div.navlink {
+    position: relative;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.7em;
+	text-align: center;
+}
+
+body {
+	background-color: #1b1d1b;
+}
+
+svg:nth-of-type(1) {
+	position: absolute;
+	top: 100%;
+    transform: translateY(-40%);
+	/* visibility: hidden; */
+	fill: black;
+}
+
+svg:nth-of-type(1)>.waveout {
+    stroke-linecap: square;
+    paint-order: fill;
+    fill-rule: nonzero;
+    transform-origin: 250px 25.9469px;
+}
+
+svg:nth-of-type(1)>.wave {
+    stroke-linecap: square;
+    paint-order: fill;
+    transform-origin: 250px 24.9469px;
+}
+
+svg:nth-of-type(2) {
+	position: absolute;
+	top: 100%;
+    transform: translateY(-130%);
+}
+
+svg:nth-of-type(2)>.waveout {
+    stroke-linecap: square;
+    paint-order: fill;
+    fill-rule: nonzero;
+}
+
+svg:nth-of-type(2)>.wave {
+    stroke-linecap: square;
+    paint-order: fill;
+}
+
+#header {
+	height: 100vh;
+	margin-bottom: 15vh;
+}
+
+#header>h1 {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -150%);
+	overflow-x: hidden;
+	font-size: 5rem;
+	width: 100%;
+}
+
+#content {
+	margin: 0 20%;
+}
+
+#scrollToTop>img {
+	width: 4vmin;
+}
+
+#scrollToTop {
+	position: fixed;
+	display: block;
+	width: 8vmin;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	bottom: 5vmin;
+	right: 5vmin;
+	transition: transform 0.5s;
+	transform: translateY(200%);
+	border: 2px solid black;
+}
