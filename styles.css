@@ -1,3 +1,45 @@
+@media (prefers-reduced-motion: no-preference) {
+	@keyframes introWaveAnimation1 {
+		from {
+			transform: scaleY(150%) translate(0%, -10%);
+		}
+
+		to {
+			transform: scaleY(150%) translate(-100%, -10%)
+		}
+	}
+
+	@keyframes introWaveAnimation2 {
+		from {
+			transform: scaleY(150%) translate(100%, -10%);
+		}
+
+		to {
+			transform: scaleY(150%) translate(0%, -10%)
+		}
+	}
+
+	@keyframes titleSlideIn {
+		from {
+			transform: translateX(-50%);
+			opacity: 0;
+		}
+
+		to {
+			transform: translateX(0%);
+			opacity: 1;
+		}
+	}
+
+	#navbar {
+		transition: top 0.7s;
+	}
+
+	#scrollToTop {
+		transition: transform 0.5s;
+	}
+}
+
 * {
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	color: #fff;
@@ -5,11 +47,14 @@
 
 body {
 	margin: 0;
+	background-color: #1b1d1b;
+	overflow-x: clip;
 }
 
-nav#navbar {
+
+#navbar {
 	position: fixed;
-	width: 100%;
+	width: 100vw;
 	height: 10vh;
 	display: flex;
 	align-items: center;
@@ -20,100 +65,342 @@ nav#navbar {
 	overflow-y: clip;
 	z-index: 10;
 	box-shadow: black 0px 0.5vh 20px;
-	transition: top 0.7s;
 }
 
-nav>a {
-    flex: 1;
-    background-color: inherit;
-    height: 100%;
-    overflow-y: hidden;
-    text-decoration: none;
+#navbar>a:has(.logo) {
+	flex: 0.7;
 }
 
-nav>a>div.navlink {
-    position: relative;
-    display: block;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.7em;
+#navbar .logo {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	&>img {
+		height: min(10vh, 15vw);
+		aspect-ratio: 1/1;
+	}
+}
+
+#navbar>a {
+	flex: 1;
+	background-color: inherit;
+	height: 100%;
+	overflow-y: hidden;
+	text-decoration: none;
+	font-size: min(2vw, 1em);
+}
+
+#navbar>a>.navlink {
+	position: relative;
+	display: block;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.7em;
 	text-align: center;
 }
 
-body {
-	background-color: #1b1d1b;
+#titleScreen {
+	position: relative;
+	width: 100%;
+	height: 80vh;
+	overflow: hidden;
+	margin: 10vh 0 0 0;
 }
 
-svg:nth-of-type(1) {
+#titleScreen>img {
+	width: 100%;
+	height: 100vh;
 	position: absolute;
-	top: 100%;
-    transform: translateY(-40%);
-	/* visibility: hidden; */
-	fill: black;
+	object-fit: cover;
+	transform: translateY(-20%);
 }
 
-svg:nth-of-type(1)>.waveout {
-    stroke-linecap: square;
-    paint-order: fill;
-    fill-rule: nonzero;
-    transform-origin: 250px 25.9469px;
-}
-
-svg:nth-of-type(1)>.wave {
-    stroke-linecap: square;
-    paint-order: fill;
-    transform-origin: 250px 24.9469px;
-}
-
-svg:nth-of-type(2) {
+#webglWarning {
 	position: absolute;
-	top: 100%;
-    transform: translateY(-130%);
+	width: 100%;
+	text-align: center;
+	margin: 20% auto auto auto;
+	visibility: hidden;
+	z-index: 1;
 }
 
-svg:nth-of-type(2)>.waveout {
-    stroke-linecap: square;
-    paint-order: fill;
-    fill-rule: nonzero;
+#loading-screen {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	transition: opacity 2s 1s;
+	opacity: 1;
 }
 
-svg:nth-of-type(2)>.wave {
-    stroke-linecap: square;
-    paint-order: fill;
+#loading-screen>img {
+	position: absolute;
+	width: 200px;
+}
+
+#loading-screen>#loading-text {
+	position: absolute;
+	top: 10%;
+}
+#loading-text>span {
+	display: inline-block;
+	min-width: 0.5em;
+	text-align: center;
+	animation: bounce 5s calc(250ms*var(--index)) infinite ease-in-out;
+}
+
+@keyframes bounce {
+	10% {
+		transform: translateY(-20px)
+	}
+	20% {
+		transform: translateY(0)
+	}
+}
+
+#loader {
+    display: block;
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    margin: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #0f0;
+    animation: spin 2s linear infinite;
+}
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #6f6;
+    animation: spin 3s linear infinite;
+}
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9f9;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0%   {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#waveDiv {
+	width: 100%;
+	overflow-x: clip;
+	position: absolute;
+	bottom: 0%;
+}
+
+.waveSvg {
+	width: 100%;
+	overflow-x: hidden;
+	position: absolute;
+	z-index: 3;
+	overflow: hidden;
+	bottom: 0%;
+	fill: url(#gradient);
+	animation: introWaveAnimation2 forwards 2s cubic-bezier(0.425, 0.02, 0.26, 1);
+}
+
+.waveSvg>.waveout {
+	stroke-linecap: square;
+	paint-order: fill;
+	fill-rule: nonzero;
+}
+
+.waveSvg>.wave {
+	stroke-linecap: square;
+	paint-order: fill;
+}
+
+.waveSvg#introWaveSvg {
+	animation: introWaveAnimation1 forwards 2s cubic-bezier(0.425, 0.02, 0.26, 1);
 }
 
 #header {
-	height: 100vh;
-	margin-bottom: 15vh;
+	position: absolute;
+	z-index: 5;
+	width: 90%;
+	bottom: 0;
+	margin: 0;
+	transform: translateX(0%);
+	animation: titleSlideIn backwards 1.5s 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #header>h1 {
 	position: absolute;
-	top: 100%;
-	left: 50%;
-	transform: translate(-50%, -150%);
+	margin: 0;
+	bottom: 0;
 	overflow-x: hidden;
 	font-size: 5rem;
 	width: 100%;
 }
 
 #content {
-	margin: 0 20%;
+	margin: 20vh auto 0 auto;
+	width: max(300px, 60vw);
+}
+
+#intoDeepLogo {
+	display: inline;
+	width: max(100px, 20vw);
+	margin: calc(max(100px, 20vw) * 0.19);
+	margin-top: 0;
+	margin-right: 0;
+	float: right;
 }
 
 #scrollToTop>img {
 	width: 4vmin;
 }
 
+#profiles {
+	position: relative;
+	display: flex;
+	left: 50%;
+	transform: translateX(-50%);
+	min-width: 400px;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+#profiles>.profileRow {
+	flex: 1;
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+#profileRow3 {
+	&>:nth-child(1) {
+		margin: 0 auto 0 0;
+	}
+	&>:nth-child(2) {
+		margin: 0 0 0 auto
+	}
+}
+
+#profiles>.profileRow>.profile {
+	flex-basis: 40%;
+	width: 5vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.profile>* {
+	width: 100%;
+}
+
+.profileImgContainer {
+	width: 10vmax;
+	height: 10vmax;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border: solid white;
+	border-radius: 50%;
+}
+
+.profileImgContainer>img {
+	width: 70%;
+}
+
+.profileImgContainer>img:hover {
+	width: 90%;
+}
+
+.profileHeader {
+	margin: 0 auto;
+}
+
+.profile>p {
+	margin: 1vh 0.5vw 3vh;
+	max-width: 140px;
+}
+
 #scrollToTop {
 	position: fixed;
-	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 8vmin;
 	aspect-ratio: 1 / 1;
 	border-radius: 50%;
 	bottom: 5vmin;
 	right: 5vmin;
-	transition: transform 0.5s;
 	transform: translateY(200%);
 	border: 2px solid black;
+	z-index: 100;
+}
+
+footer {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	min-height: 15vh;
+	border-top: solid white 2px;
+	background: #333834;
+}
+
+.footerColumn {
+	margin: 2vw;
+}
+
+.footerColumn>ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	list-style: none;
+	padding: unset;
+	margin: 0;
+}
+
+.footerColumn>ul>* {
+	margin: 0;
+}
+
+#footerLogo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: min(10vw, 50px);
+	&>.logo {
+		height: 15vh;
+	}
+	&>h2 {
+		text-align: center;
+		margin: 0;
+	}
 }
