@@ -1,21 +1,11 @@
 @media (prefers-reduced-motion: no-preference) {
-	@keyframes introWaveAnimation1 {
+	@keyframes introWaveAnimation {
 		from {
 			transform: scaleY(150%) translate(0%, -10%);
 		}
 
 		to {
 			transform: scaleY(150%) translate(-100%, -10%)
-		}
-	}
-
-	@keyframes introWaveAnimation2 {
-		from {
-			transform: scaleY(150%) translate(100%, -10%);
-		}
-
-		to {
-			transform: scaleY(150%) translate(0%, -10%)
 		}
 	}
 
@@ -105,17 +95,16 @@ body {
 #titleScreen {
 	position: relative;
 	width: 100%;
-	height: 80vh;
+	height: 90vh;
 	overflow: hidden;
 	margin: 10vh 0 0 0;
 }
 
 #titleScreen>img {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	position: absolute;
 	object-fit: cover;
-	transform: translateY(-20%);
 }
 
 #webglWarning {
@@ -214,7 +203,7 @@ body {
 
 #waveDiv {
 	width: 100%;
-	overflow-x: clip;
+	margin: auto -10px;
 	position: absolute;
 	bottom: 0%;
 }
@@ -226,8 +215,9 @@ body {
 	z-index: 3;
 	overflow: hidden;
 	bottom: 0%;
+	left: 0%;
 	fill: url(#gradient);
-	animation: introWaveAnimation2 forwards 2s cubic-bezier(0.425, 0.02, 0.26, 1);
+	animation: introWaveAnimation forwards 2s cubic-bezier(0.425, 0.02, 0.26, 1);
 }
 
 .waveSvg>.waveout {
@@ -242,7 +232,8 @@ body {
 }
 
 .waveSvg#introWaveSvg {
-	animation: introWaveAnimation1 forwards 2s cubic-bezier(0.425, 0.02, 0.26, 1);
+	left: 99.9%;
+	animation: introWaveAnimation forwards 2s cubic-bezier(0.425, 0.02, 0.26, 1);
 }
 
 #header {
@@ -257,10 +248,12 @@ body {
 
 #header>h1 {
 	position: absolute;
+	display: block;
+	z-index: 10;
 	margin: 0;
 	bottom: 0;
 	overflow-x: hidden;
-	font-size: 5rem;
+	font-size: clamp(50px, 10vw, 5rem);
 	width: 100%;
 }
 

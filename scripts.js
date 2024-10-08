@@ -33,8 +33,8 @@ const wave = document.getElementById("waveSvg");
 
 window.addEventListener("load", () => {
 	setTimeout(() => {
-		introWave.style.animation = "introWaveAnimation2 forwards 8s 0s infinite linear";
-		wave.style.animation = "introWaveAnimation1 forwards 8s 0s infinite linear";
+		introWave.style.animation = "introWaveAnimation 8s infinite linear";
+		wave.style.animation = "introWaveAnimation 8s infinite linear";
 	}, 2000);
 });
 
