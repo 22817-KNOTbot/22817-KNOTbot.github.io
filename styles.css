@@ -37,6 +37,7 @@
 
 	#scrollToTop {
 		transition: transform 0.5s;
+		color-scheme: light;
 	}
 }
 
@@ -62,7 +63,6 @@ body {
 	background-color: #333834;
 	top: 0px;
 	left: 0px;
-	border-bottom: solid white 1px;
 	overflow-y: clip;
 	z-index: 10;
 	box-shadow: black 0px 0.5vh 20px;
@@ -70,6 +70,8 @@ body {
 
 #navbar>a:has(.logo) {
 	flex: 0.7;
+	display: flex;
+	align-items: center
 }
 
 #navbar .logo {
@@ -77,7 +79,7 @@ body {
 	display: flex;
 	justify-content: center;
 	&>img {
-		height: min(10vh, 15vw);
+		width: min(100%, 8vh);
 		aspect-ratio: 1/1;
 	}
 }
@@ -264,7 +266,7 @@ body {
 
 #content {
 	margin: 20vh auto 0 auto;
-	width: max(300px, 60vw);
+	width: clamp(300px, 60vw, 800px);
 }
 
 #intoDeepLogo {
