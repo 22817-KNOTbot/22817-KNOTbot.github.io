@@ -383,12 +383,12 @@ footer {
 
 .footerColumn {
 	margin: 2vw;
-}
-
-.footerColumn>ul {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+.footerColumn>ul {
 	height: 100%;
 	list-style: none;
 	padding: unset;
