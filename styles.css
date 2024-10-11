@@ -29,6 +29,16 @@
 		transition: transform 0.5s;
 		color-scheme: light;
 	}
+
+	@keyframes sponsorTierCardGradientPan {
+		from {
+			background-position: 0% center;
+		}
+
+		to {
+			background-position: 100% center;
+		}
+	}
 }
 
 * {
@@ -202,14 +212,17 @@ body {
 }
 
 #waveDiv {
-	width: 100%;
-	margin: auto -10px;
+	width: 100vw;
+	max-width: 100%;
+	overflow-x: clip;
+	/* margin: auto -10px; */
 	position: absolute;
 	bottom: 0%;
+	left: 0%;
 }
 
 .waveSvg {
-	width: 100%;
+	width: calc(100% + 1px);
 	overflow-x: hidden;
 	position: absolute;
 	z-index: 3;
@@ -232,7 +245,7 @@ body {
 }
 
 .waveSvg#introWaveSvg {
-	left: 99.9%;
+	left: 100%;
 	animation: introWaveAnimation forwards 2s cubic-bezier(0.425, 0.02, 0.26, 1);
 }
 
@@ -399,4 +412,105 @@ footer {
 		text-align: center;
 		margin: 0;
 	}
+}
+
+#sponsorTierCards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.sponsorTierCardBorder {
+	flex: 1;
+	min-width: 160px;
+	max-width: 200px;
+	height: 50vh;
+	margin: auto 0.5vw;
+	border-radius: 2rem;
+	background: linear-gradient(135deg, var(--borderColour2), var(--borderColour1) 40%, var(--borderColour2));
+	background-repeat: repeat;
+	background-size: 300%;
+	background-position: 100% 100%;
+	transform: translate(0, 0);
+	box-shadow: rgba(255, 255, 255, 0.5) 0.05vw 0.05vw 10px;
+	transition: transform 1s, background-position 1s, box-shadow 1s;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1080px) {
+	.sponsorTierCardBorder {
+		min-width: 230px;
+	}
+}
+
+#sponsorTierCards>.sponsorTierCardBorder:has(.sponsorTierCard.highlightedTier) {
+	flex: 1.2;
+	height: 60vh;
+}
+
+#sponsorTierCards .sponsorTierCard {
+	background: #2a2b2ac6;
+	border-radius: 2rem;
+	position: relative;
+	transition: transform 1s;
+	height: calc(100% - 1rem);
+	margin: 0.5rem;
+	padding: 0.2rem;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#sponsorTierCards>.sponsorTierCardBorder:hover {
+	transform: translate(0, -1vw);
+	background-position: 0 0;
+	box-shadow: rgba(255, 255, 255, 0.3) 0.05vw 0.8vw 20px;
+}
+
+.sponsorTierCard>h2 {
+	margin: 0;
+	margin-left: 1vw;
+	background-image: linear-gradient(90deg, var(--borderColour1), var(--borderColour2), var(--borderColour1));
+	background-repeat: repeat;
+	background-size: 50%;
+	background-clip: text;
+	transition: color 1s;
+	animation: sponsorTierCardGradientPan 5s linear infinite;
+	color: rgba(255, 255, 255, 1);
+}
+
+.sponsorTierCard>.tierPrice {
+	margin: 0;
+	margin-left: 1vw;
+}
+
+.sponsorTierCard:hover>h2 {
+	color: rgba(0, 0, 0, 0);	
+}
+
+.sponsorTierCard::before {
+	content: "";
+	background: radial-gradient(
+		300px circle at var(--mouse-x) var(--mouse-y),
+		rgba(255, 255, 255, 0.1),
+		transparent 40%);
+	border-radius: inherit;
+	height: 100%;
+	width: 100%;
+	top: 0%;
+	left: 0%;
+	position: absolute;
+	z-index: 2;
+	opacity: 0;
+	transition: opacity 500ms;
+}
+
+.sponsorTierCard:hover::before {
+	opacity: 1;
+}
+
+.sponsorTierCard>ul {
+	padding-left: 1.5em;
 }

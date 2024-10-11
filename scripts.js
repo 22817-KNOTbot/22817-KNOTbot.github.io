@@ -32,10 +32,11 @@ const introWave = document.getElementById("introWaveSvg");
 const wave = document.getElementById("waveSvg");
 
 window.addEventListener("load", () => {
-	setTimeout(() => {
-		introWave.style.animation = "introWaveAnimation 8s infinite linear";
-		wave.style.animation = "introWaveAnimation 8s infinite linear";
-	}, 2000);
+	const slowAnimation = (event) => {
+		event.target.style.animation = "introWaveAnimation none 8s 2s infinite linear";
+	}
+	introWave.addEventListener('animationend', slowAnimation);
+	wave.addEventListener('animationend', slowAnimation);
 });
 
 // Bouncing loading text
@@ -69,3 +70,14 @@ if (bounce) {
 	
 	applyBounce(0, 0);
 }
+
+// Sponsor Tier effect
+const cards = document.getElementsByClassName("sponsorTierCard");
+document.addEventListener("mousemove", (event) => {
+	for (card of cards) {
+		const rect = card.getBoundingClientRect();
+
+		card.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`);
+		card.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`);
+	}
+});
