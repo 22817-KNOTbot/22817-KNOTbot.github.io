@@ -9,7 +9,7 @@
 	<meta name="keywords" content="FIRST, FTC, robotics, killarney, KNOTbot, 22817">
 	<meta name="theme-color" content="#1b1d1b">
 	<meta name="color-scheme" content="dark">
-	
+
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="KNOTbot 22817">
 	<meta property="og:image" content="/assets/logo.webp">
@@ -19,13 +19,14 @@
 	<link rel="icon" href="/assets/favicon.ico">
 	<title>22817 KNOTbot - Our Robot</title>
 	<script src="scripts.js" defer></script>
-	<script type="importmap"> { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@v0.169.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.169.0/examples/jsm/" } } </script>
+	<script
+		type="importmap"> { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@v0.169.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.169.0/examples/jsm/" } } </script>
 	<script type="module" src="/three.js" defer></script>
 </head>
 
 <body>
 	<nav id="navbar">
-		<a href="/">	
+		<a href="/">
 			<div class="logo"><img src="assets/logo.webp" alt="Logo of KNOTbot 22817"></div>
 		</a>
 		<a href="/">
@@ -44,27 +45,31 @@
 			<div class="navlink">Page</div>
 		</a>
 	</nav>
-	
+
 	<div id="waveDiv">
 		<svg viewBox="0 0.967 500 48.978" class="waveSvg" id="waveSvg">
-			<path class="waveout" d="M 0 13.252 C 150 -22.44 350 48.945 500 13.252 L 500 48.945 L 0 48.945" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)" />
-			<path class="wave" d="M 0 14.252 C 150 -21.44 350 49.945 500 14.252 L 500 49.945 L 0 49.945" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 3.552713678800501e-15, 0)" />
+			<path class="waveout" d="M 0 13.252 C 150 -22.44 350 48.945 500 13.252 L 500 48.945 L 0 48.945"
+				transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)" />
+			<path class="wave" d="M 0 14.252 C 150 -21.44 350 49.945 500 14.252 L 500 49.945 L 0 49.945"
+				transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 3.552713678800501e-15, 0)" />
 			<defs>
 				<linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
 					<stop offset="0%" stop-color="#333" />
-					<stop offset="80%" stop-color="#1d1b1d" />
-					<stop offset="100%" stop-color="#1d1b1d" />
+					<stop offset="80%" stop-color="#1b1d1b" />
+					<stop offset="100%" stop-color="#1b1d1b" />
 				</linearGradient>
 			</defs>
 		</svg>
 		<svg viewBox="0 0.967 500 48.978" class="waveSvg" id="introWaveSvg">
-			<path class="waveout" d="M 0 13.252 C 150 -22.44 350 48.945 500 13.252 L 500 48.945 L 0 48.945" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)" />
-			<path class="wave" d="M 0 14.252 C 150 -21.44 350 49.945 500 14.252 L 500 49.945 L 0 49.945" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 3.552713678800501e-15, 0)" />
+			<path class="waveout" d="M 0 13.252 C 150 -22.44 350 48.945 500 13.252 L 500 48.945 L 0 48.945"
+				transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)" />
+			<path class="wave" d="M 0 14.252 C 150 -21.44 350 49.945 500 14.252 L 500 49.945 L 0 49.945"
+				transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 3.552713678800501e-15, 0)" />
 			<defs>
 				<linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
 					<stop offset="0%" stop-color="#333" />
-					<stop offset="80%" stop-color="#1d1b1d" />
-					<stop offset="100%" stop-color="#1d1b1d" />
+					<stop offset="80%" stop-color="#1b1d1b" />
+					<stop offset="100%" stop-color="#1b1d1b" />
 				</linearGradient>
 			</defs>
 		</svg>
@@ -74,7 +79,7 @@
 		<h1 id="webglWarning">Your browser does not support WebGL. Please try a different browser.</h1>
 		<section id="loading-screen">
 			<div id="loader"></div>
-			<img src="assets/logo.webp" >
+			<img src="assets/logo.webp">
 			<h2 id="loading-text">Loading Model...</h2>
 		</section>
 	</div>
@@ -91,91 +96,47 @@
 			Current Capabilities
 		</h1>
 		<p>
-			The customer is very important, the customer will be followed by the customer. The gate is a great place,
-			and time does not come to an end. Until the mouth of the mouth, not the urn. Mauris dignissim feugiat nibh,
-			not tincidunt mauris ullamcorper or The boat itself, sealed as it is, always a great time. But I was a
-			vulputate venenatis. Some always except in the weekend vehicles. Each person is a person who is a mass of
-			the valley, not the author of the sauce.
+			Our robot is primarily designed towards the current season of the <em>First</em>® Tech Challenge: INTO THE
+			DEEP<sup>SM</sup> presented by RTX. The main scoring element for this competition is the sample, which is a
+			rectangular prism with triangular indents. We currently use the goBilda Strafer Chassis V4 kit as the base
+			of our robot, which includes goBilda Mecanum wheels that allow movement in any direction. We plan for our
+			robot to feature an efficient intake system to gather and transfer the samples to the deposit system. More
+			details can be found in <a href=”#Goals”>Goals</a>. Once our sample is gathered, a colour sensor detects its
+			colour. If it identifies the wrong colour, the intake will automatically release the sample.
 		</p>
+
 		<p>
-			Tomorrow was the land, dignissim nor mauris, but flatters with the easy treatment. Aenean will be chased
-			before Lacinia, mattis dui nec, Euismod elit. But it is a soft sauce to garnish. He was not completely
-			afraid of pain. Morbi sad to adorn the laoreet. There is no dignissim nor in ultricies. We live in the
-			arrows of the augue, or the airline. I'm sick and tired, and I'm a makeup artist. Even the pillow is what
-			you need for the ends. For now, to decorate at large but, hendrerit pulvinar fear. No sauce or peanuts, in
-			the vestibule.
+			Next, we have two goBilda servos that raise our arm up and back into the robot. This is where our deposit
+			system comes into play, consisting of two 4-stage Viper-Slides from goBilda, along with our custom-designed
+			claw. Once the intake system brings the sample into the robot, the claw grabs onto it, and the driver
+			maneuvers to the target bucket. The driver then presses the deposit button, triggering an automated command
+			to deposit the sample. When this occurs, the two Viper-Slides extend and the intake spins in the opposite
+			direction to prevent jams. After the sample is released from the intake, the claw will align with the high
+			basket while the driver positions the robot to ensure the sample properly lands into the basket. Finally,
+			the driver presses the button to open the claw and release the sample, later pressing the same button to
+			retract everything back into the robot. This is a quick overview of our robot and how it operates
+			efficiently and effectively to score points in this year's game.
 		</p>
-		<h1>
+		<h1 id="Goals">
 			Goals
 		</h1>
 		<p>
-			Now the trucks are ugly, and the price is the price of the weekend. Mauris read that from which airline he
-			was pregnant. Aeneas venomous than a tortor, or porta urn rhoncus in I would like to drink the mass of the
-			liquor, and not the soft drinks. There is no consequence of the free time of the gatekeeper. Suspendisse
-			sollicitudin diam and eros tincidunt porttitor. For the benefit of the family at the bed of the bed, who is
-			the owner of the property. But Maecenas is a wise pillow, in the end a torturer. It's a fear of the
-			Hendrerit, and it's just running out. Lives the molestie ligula lectus, not laoreet himself flatters it. In
-			order to meet the needs of the people of Lacinia. But the pregnant mass and the pain of the laoreet, who
-			wants to go to the port. However, it is said that he is very flattering at the time, he is a great asset
-			developer, but the author himself is from a pure.
-		</p>
-
-		<p>
-			Each and every smile to put, run except in, draw out. Tomorrow fermentum leo hendrerit urna feugiat
-			facilisis. No heavy vehicles are hated and chased. Anyone who wants a mass, receives it with hatred, does
-			not put it down. Now the course is not in the players tincidunt, but the corporal trigger soft. To drink the
-			fear of life with arrows, from the makeup of laughter. There is no backyard pond, no porch and no pain, the
-			price of the employee. Duis sollicitudin urn that orc venetisum rhoncus. Now the cartoon is the biggest, so
-			that the cartoon is a big cartoon.
-		</p>
-
-		<p>
-			Mauris sed sem members, course nibh in, semper pain. Two years of life should be drunk at that time. But now
-			it was said by the sage. But it was said to be hateful, and the therapeutic pillow of football. Aeneas is a
-			cartoon made of football. The front porch of life flatters the trucks. Even mourning, before and homework,
-			the doctor wants the doctor, and sometimes my tortor, but now. But the beauty of the disease, and the author
-			of it. Fusce is not lacinia no lacinia, and for vulputate. As eu nibh tincidunt, finnis nisl as, sad fear.
-			Clinical and clinical fear. Fusce laughter is a cure, grief needs no course, but it is good to be comforted.
-		</p>
-
-		<p>
-			Even the fermenting pot but the eros euismod quiver. But if not the urn, the makeup and not the
-			propagandist; It is a time of great pain, but the borders of the lake are closed and Tomorrow hendrerit and
-			dui lobortis, eu rhoncus hate mourning. I will try and follow the lake. In fact, the temperature is very
-			easy. No tincidunt, it was that it was made convenient, it was just the result of the land, not the owner of
-			the land, not the land. Until it is, it is not convenient for me to worry about being in bed. It is the
-			wisdom of the arc, the lacinia is the eleifend at, it is said that it needs eros.
-		</p>
-
-		<p>
-			Morbi pulvinar feugiat fermentum. Even the tincidunt convallis pellentesque. The class is suitable for the
-			silent partners who turn to the shores through our marriages, through the Hymenaean projects. Maecenas
-			sometimes invests money in great wisdom. Duis hendrerit vehicles tincidunt. In the grid he wants. There is
-			no pot for the house, it is necessary and it is done, it is real, real estate and land. Until someone
-			invests a house or a house, whether he is wise or not. The stage is dignissim laughter. Until the patient
-			wants. It's a CNN report from the very sad kids who don't. If there is no fear, he needs arrows from
-			football, for euismod targets. Children are living with disease, old age and children, and they are
-			suffering from hunger and poverty. Aeneas is not mine either.
-		</p>
-
-		<p>
-			He does not need to be poisoned for a long time, it is the employee's trigger. Everyone should be ready
-			before the weekend. In need of care before or after the outcome. Now neither the lake nor the tincidunt, for
-			soft football, my casino. Some real estate is the price of homework. For easy homework from the door. There
-			is no real estate. Vivamus euismod diam at hendrerit author. Until he flatters, there is no untargeted
-			grief. We live some of the earth from, as the time fear said it. Until the end of the bow as the dough of
-			the dough and the dough. But who does not care about his life before he can even trigger it.
-		</p>
-
-		<p>
-			But in pursuit of what, one has great ends. The children and the great in time soft members and but no.
-			There are no limits to life. We live out of the urn, the members of the football team or even, the eleifend
-			of my arrows. It's just a matter of not being targeted by a policy. For Maecenas will finance the taxes, he
-			wants to be sad and, dignissim now. In no other way than wisdom.
+			Even with the many mechanisms our robot already contains, there is still much to be done. We have prototyped
+			an “Active Intake” that utilizes a soft, rubber wheel with spikes, spinning inward to gather the samples.
+			This wheel will be powered by a goBilda 5203 series motor, capable of spinning at up to 1620 RPM. Using this
+			design will allow us to achieve the efficient and effective intake system which we initially envisioned. The
+			claw also needs a way to be controlled. A design for a differential wrist is in progress which, if
+			implemented, will allow 2-axes of 360-degree motion. This will provide the precise transfer and deposit
+			system that we need. Another option is a coaxial virtual 4-bar. This option would have a similar range of
+			motion and therefore similar benefits. We are currently debating on current designs due to their individual
+			pros and cons. Finally, our drop-down arms may work for now, yet they have room for improvement. If funding
+			and time allows, we plan to replace them for small linear slides, increasing efficiency in the intake
+			system. These upgrades can be quite costly, requiring proper management of funds. More details can be found
+			on <a href="/funding.html">Funding</a>.
 		</p>
 	</main>
 	<button id="scrollToTop" title="Scroll to top"><img src="/assets/top.svg" alt=""></button>
-		<footer>
+	<footer>
 		<div id="contactInfo" class="footerColumn">
 			<h3>Contact Info</h3>
 			<ul>
@@ -203,4 +164,5 @@
 		</div>
 	</footer>
 </body>
+
 </html>

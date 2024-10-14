@@ -80,4 +80,10 @@ document.addEventListener("mousemove", (event) => {
 		card.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`);
 		card.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`);
 	}
+
+	// Navbar show when mouse near top
+	const navbar =  document.getElementById("navbar");
+	if (event.clientY < 50) {
+		navbar.style.top = "0";
+	}
 });
