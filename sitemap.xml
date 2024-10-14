@@ -3,22 +3,18 @@
 
 <url>
   <loc>https://knotbot22817.github.io/</loc>
-  <lastmod>2024-10-11T04:06:26+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://knotbot22817.github.io/robot.html</loc>
-  <lastmod>2024-10-11T04:06:26+00:00</lastmod>
+  <loc>https://knotbot22817.github.io/robot</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://knotbot22817.github.io/funding.html</loc>
-  <lastmod>2024-10-11T04:06:26+00:00</lastmod>
+  <loc>https://knotbot22817.github.io/funding</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://knotbot22817.github.io/sponsors.html</loc>
-  <lastmod>2024-10-11T04:06:26+00:00</lastmod>
+  <loc>https://knotbot22817.github.io/sponsors</loc>
   <priority>0.80</priority>
 </url>
 
