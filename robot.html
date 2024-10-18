@@ -19,9 +19,6 @@
 	<link rel="icon" href="/assets/favicon.ico">
 	<title>22817 KNOTbot - Our Robot</title>
 	<script src="scripts.js" defer></script>
-	<script
-		type="importmap"> { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@v0.169.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.169.0/examples/jsm/" } } </script>
-	<script type="module" src="/three.js" defer></script>
 </head>
 
 <body>
@@ -73,12 +70,7 @@
 	</div>
 
 	<div id="titleScreen">
-		<h1 id="webglWarning">Your browser does not support WebGL. Please try a different browser.</h1>
-		<section id="loading-screen">
-			<div id="loader"></div>
-			<img src="assets/logo.webp">
-			<h2 id="loading-text">Loading Model...</h2>
-		</section>
+		<img id="titleImg" src="/assets/robot.webp" alt="Photo of our robot">
 	</div>
 
 	<div id="header">
@@ -98,7 +90,7 @@
 			rectangular prism with triangular indents. We currently use the goBilda Strafer Chassis V4 kit as the base
 			of our robot, which includes goBilda Mecanum wheels that allow movement in any direction. We plan for our
 			robot to feature an efficient intake system to gather and transfer the samples to the deposit system. More
-			details can be found in <a href=”#Goals”>Goals</a>. Once our sample is gathered, a colour sensor detects its
+			details can be found in <a href="#Goals">Goals</a>. Once our sample is gathered, a colour sensor detects its
 			colour. If it identifies the wrong colour, the intake will automatically release the sample.
 		</p>
 

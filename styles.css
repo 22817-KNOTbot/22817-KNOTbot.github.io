@@ -54,7 +54,7 @@
 body {
 	margin: 0;
 	background-color: var(--background-color);
-	overflow-x: clip;
+	overflow-x: hidden;
 }
 
 
@@ -267,13 +267,49 @@ body {
 	display: block;
 	z-index: 10;
 	margin: 0;
+	margin-left: 2vw;
 	bottom: 0;
 	overflow-x: hidden;
 	font-size: clamp(50px, 10vw, 5rem);
 	width: 100%;
 }
 
-#content {
+#header.fullHeader {
+	width: 100%;
+	min-height: 90vh;
+	margin-top: 10vh;
+	position: static;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	&>h1 {
+		position: inherit;
+		margin: 0;
+		text-align: center;
+	}
+	&>p {
+		width: 50%;
+		text-align: center;
+		font-size: 1.5em;
+	}
+}
+
+#header.fullHeader::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	z-index: -1;
+	opacity: 0.4;
+	background: url(/assets/logo.webp) no-repeat 50% 50%;
+	background-size: 50%;
+}
+
+
+main#content {
 	margin: 20vh auto 0 auto;
 	width: clamp(300px, 60vw, 800px);
 }
@@ -344,12 +380,13 @@ body {
 }
 
 .profileImgContainer>img {
-	width: 70%;
-	transition: width 500ms;
+	width: 100%;
+	object-fit: cover;
+	transition: transform 500ms;
 }
 
 .profileImgContainer>img:hover {
-	width: 90%;
+	transform: scale(1.2);
 }
 
 .profileHeader {
@@ -540,7 +577,7 @@ footer {
 	height: 100%;
 	font-size: 2rem;
 	background-color: #00916e;
-	border: 1px white outset;
+	border: 3px solid white;
 	cursor: pointer;
 	&>span {
 		background-image: linear-gradient(90deg, #dff8eb, #4d7ea8, #dff8eb);
