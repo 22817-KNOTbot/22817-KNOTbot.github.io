@@ -398,6 +398,23 @@ main#content {
 	max-width: 140px;
 }
 
+#sponsors {
+	margin-bottom: 5vh;
+}
+
+#sponsorLogos {
+	display: flex;
+}
+
+#sponsorLogos>.sponsorColumn {
+	width: clamp(300px, 50%, 800px);
+	display: flex;
+	flex-direction: column;
+	& img {
+		width: 100%;
+	}
+}
+
 #scrollToTop {
 	position: fixed;
 	display: flex;
