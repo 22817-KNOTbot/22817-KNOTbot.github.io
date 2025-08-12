@@ -1,5 +1,5 @@
 // Navbar, scroll to top, profiles scroll handlers
-var prevScrollPos = window.scrollY;
+let prevScrollPos = window.scrollY;
 
 const scrollToTop = document.getElementById("scrollToTop");
 
@@ -31,16 +31,18 @@ scrollToTop.onclick = () => {
 const introWave = document.getElementById("introWaveSvg");
 const wave = document.getElementById("waveSvg");
 
-window.addEventListener("load", () => {
-	const slowAnimation = (event) => {
-		event.target.style.animation = "introWaveAnimation none 8s 2s infinite linear";
-	}
-	introWave.addEventListener('animationend', slowAnimation);
-	wave.addEventListener('animationend', slowAnimation);
-});
+if (introWave && wave) {
+	window.addEventListener("load", () => {
+		const slowAnimation = (event) => {
+			event.target.style.animation = "introWaveAnimation none 8s 2s infinite linear";
+		}
+		introWave.addEventListener('animationend', slowAnimation);
+		wave.addEventListener('animationend', slowAnimation);
+	});
+}
 
 // Bouncing loading text
-bounce = document.getElementById("loading-text");
+const bounce = document.getElementById("loading-text");
 if (bounce) {
 	let myText = bounce.innerHTML
 	let wrapText = "";
@@ -71,6 +73,27 @@ if (bounce) {
 	applyBounce(0, 0);
 }
 
+// Profile Spread Animation
+const profiles = document.getElementById("profiles");
+if (profiles) {
+	const scrollObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				Array.from(document.getElementsByClassName("profile")).forEach(element => {
+					element.style.transform = "translateX(0)";
+				});
+			} else if (entry.boundingClientRect.y > 0) {
+				Array.from(document.getElementsByClassName("profile")).forEach(element => {
+					element.style.transform = "";
+				});
+			}
+		})
+	}, {
+		threshold: 0,
+	});
+	scrollObserver.observe(profiles);
+}
+
 // Sponsor Tier effect
 const cards = document.getElementsByClassName("sponsorTierCard");
 document.addEventListener("mousemove", (event) => {
@@ -87,3 +110,53 @@ document.addEventListener("mousemove", (event) => {
 		navbar.style.top = "0";
 	}
 });
+
+// Slideshow
+const slideshowWindow = document.getElementById("slideshowWindow");
+const updateSlideshow = (slides) => {
+	if (slideshowWindow) {
+		const slidesNum = slides.length;
+		for (let i = 0; i < slidesNum; i++) {
+			const position = i*100 - 100;
+			slides[i].style.left = `${position}%`;
+			if (position <= 0) {
+				slides[i].style.visibility = "visible";
+			} else {
+				slides[i].style.visibility = "hidden";
+			}
+		}
+	}
+}
+
+let rotatingSlides = [];
+const rotateSlides = () => {
+	let slides = slideshowWindow.querySelectorAll("img");
+	if (rotatingSlides.length == 0) {
+		rotatingSlides = Array.from(slides);
+		rotatingSlides.unshift(rotatingSlides.pop())
+	} else {
+		rotatingSlides.push(rotatingSlides.shift());
+	}
+	updateSlideshow(rotatingSlides);
+};
+
+const prefers_reduced_motion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let slideshowInterval;
+if (slideshowWindow) {
+	rotateSlides();
+	
+	const slideshowPause = document.getElementById("slideshowPause");
+
+	slideshowPause.checked = prefers_reduced_motion;
+
+	const toggleSlideshow = () => {
+		if (!slideshowPause.checked) {
+			slideshowInterval = setInterval(rotateSlides, 4000);
+		} else {
+			clearInterval(slideshowInterval);
+		}
+	}
+
+	slideshowPause.addEventListener("change", toggleSlideshow);
+	toggleSlideshow();
+}

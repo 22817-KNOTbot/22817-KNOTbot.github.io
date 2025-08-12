@@ -2,6 +2,11 @@
 	--background-color: #1b1d1b;
 }
 
+@font-face {
+	font-family: 'Nunito';
+	src: url(./assets/fonts/Nunito.woff2) format('woff2');
+}
+  
 @media (prefers-reduced-motion: no-preference) {
 	@keyframes introWaveAnimation {
 		from {
@@ -26,12 +31,26 @@
 	}
 
 	#navbar {
-		transition: top 0.7s;
+		transition: top 0.5s;
+	}
+
+	@keyframes profileSpread {
+		from {
+			transform: translateX(calc(100% * var(--offset))) !important;
+		}
+
+		to {
+			transform: translateX(0) !important;
+		}
+	}
+
+	.profile {
+		transform: translateX(calc(100% * var(--offset)));
+		transition: transform 1.5s;
 	}
 
 	#scrollToTop {
 		transition: transform 0.5s;
-		color-scheme: light;
 	}
 
 	@keyframes gradientPan {
@@ -46,7 +65,7 @@
 }
 
 * {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: Nunito, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	color: #fff;
 	color-scheme: dark;
 }
@@ -54,7 +73,6 @@
 body {
 	margin: 0;
 	background-color: var(--background-color);
-	overflow-x: hidden;
 }
 
 
@@ -67,7 +85,7 @@ body {
 	background-color: #333834;
 	top: 0px;
 	left: 0px;
-	overflow-y: clip;
+	overflow-y: hidden;
 	z-index: 10;
 	box-shadow: black 0px 0.5vh 20px;
 }
@@ -119,6 +137,54 @@ body {
 	height: 100%;
 	position: absolute;
 	object-fit: cover;
+}
+
+#titleScreen>#slideshowWindow {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+#slideshowWindow>img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	object-fit: cover;
+	transition: left 1500ms;
+}
+
+#slideshowWindow>div {
+	position: absolute;
+	display: block;
+	width: 2vw;
+	height: 2vw;
+	z-index: 100;
+	top: 1vmin;
+	right: 1vmin;
+	
+	&>#slideshowPause {
+		position: absolute;
+		appearance: none;
+		cursor: pointer;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		&::after {
+			content: "";
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			background-image: var(--pause-icon);
+			background-size: 100%;
+			stroke: white;
+		}
+		&:checked {
+			--pause-icon: url(assets/play.svg)
+		}
+		&:not(:checked) {
+			--pause-icon: url(assets/pause.svg);
+		}
+	}
 }
 
 #webglWarning {
@@ -218,7 +284,8 @@ body {
 #waveDiv {
 	width: 100vw;
 	max-width: 100%;
-	overflow-x: clip;
+	height: 100%;
+	overflow: hidden;
 	position: absolute;
 	bottom: 0%;
 	left: 0%;
@@ -226,10 +293,8 @@ body {
 
 .waveSvg {
 	width: calc(100% + 1px);
-	overflow-x: hidden;
 	position: absolute;
 	z-index: 3;
-	overflow: hidden;
 	bottom: 0%;
 	left: 0%;
 	fill: url(#gradient);
@@ -311,20 +376,16 @@ body {
 
 main#content {
 	margin: 20vh auto 0 auto;
-	width: clamp(300px, 60vw, 800px);
+	width: clamp(200px, 60vw, 1500px);
 }
 
 #intoDeepLogo {
 	display: inline;
-	width: max(100px, 20vw);
+	width: clamp(100px, 20vw, 500px);
 	margin: calc(max(100px, 20vw) * 0.19);
 	margin-top: 0;
 	margin-right: 0;
 	float: right;
-}
-
-#scrollToTop>img {
-	width: 4vmin;
 }
 
 #profiles {
@@ -333,29 +394,10 @@ main#content {
 	left: 50%;
 	transform: translateX(-50%);
 	min-width: 400px;
-	flex-direction: column;
 	justify-content: space-evenly;
 }
 
-#profiles>.profileRow {
-	flex: 1;
-	
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-}
-
-#profileRow3 {
-	&>:nth-child(1) {
-		margin: 0 auto 0 0;
-	}
-	&>:nth-child(2) {
-		margin: 0 0 0 auto
-	}
-}
-
-#profiles>.profileRow>.profile {
+#profiles>.profile {
 	flex-basis: 40%;
 	width: 5vw;
 	display: flex;
@@ -364,13 +406,48 @@ main#content {
 	text-align: center;
 }
 
+.profile:nth-child(1) {
+	--offset: 3;
+	z-index: 1;
+}
+
+.profile:nth-child(2) {
+	--offset: 2;
+	z-index: 2;
+}
+
+.profile:nth-child(3) {
+	--offset: 1;
+	z-index: 3;
+}
+
+.profile:nth-child(4) {
+	--offset: 0;
+	z-index: 4;
+}
+
+.profile:nth-child(5) {
+	--offset: -1;
+	z-index: 3;
+}
+
+.profile:nth-child(6) {
+	--offset: -2;
+	z-index: 2;
+}
+
+.profile:nth-child(7) {
+	--offset: -3;
+	z-index: 1;
+}
+
 .profile>* {
 	width: 100%;
 }
 
 .profileImgContainer {
-	width: 10vmax;
-	height: 10vmax;
+	width: 80%;
+	aspect-ratio: 1 / 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -421,14 +498,16 @@ main#content {
 	justify-content: center;
 	align-items: center;
 	width: 8vmin;
-	aspect-ratio: 1 / 1;
+	height: 8vmin;
 	border-radius: 50%;
 	bottom: 5vmin;
 	right: 5vmin;
+	padding: 2vmin;
 	transform: translateY(200%);
-	border: 2px solid black;
+	border: 0.5vmin solid black;
 	z-index: 100;
 	cursor: pointer;
+	color-scheme: light;
 }
 
 footer {
