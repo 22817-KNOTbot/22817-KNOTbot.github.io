@@ -171,7 +171,8 @@ h2 {
 }
 
 #navbar .logo {
-	height: 8vh;
+	width: min(calc(var(--navbar-width) / 10), 8vh);
+	height: min(calc(var(--navbar-width) / 10), 8vh);
 	display: flex;
 }
 
@@ -506,6 +507,7 @@ img.img-contain {
 	width: 100%;
 	height: 100%;
 	filter: brightness(50%);
+	object-fit: cover;
 }
 
 .awardsImgLayer {
@@ -540,6 +542,7 @@ img.img-contain {
 	padding: 1%;
 	border: 1px solid white;
 	border-radius: 10vw;
+	text-align: center;
 }
 
 #awardsList>.award:nth-child(2) {
