@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Ethan Wong">
+	<meta name="description" content="FTC KNOTbot 22817">
+	<meta name="keywords" content="FIRST, FTC, robotics, killarney, KNOTbot, 22817">
+	<meta name="theme-color" content="#1b1d1b">
+	<meta name="color-scheme" content="dark">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="KNOTbot 22817">
+	<meta property="og:image" content="/assets/logo.webp">
+	<meta property="og:description" content="FTC team 22817 KNOTbot">
+
+	<link rel="stylesheet" href="/styles.css">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<title>22817 KNOTbot - Cross-District Challenge</title>
+	<script src="/scripts.js" defer></script>
+</head>
+
+<body>
+	<nav id="navbar">
+		<a href="/">
+			<div class="navlink">
+				<div class="logo"><img src="/assets/logo.webp" alt="Logo of KNOTbot 22817"></div>
+			</div>
+		</a>
+		<a href="/team">
+			<div class="navlink">About</div>
+		</a>
+		<a href="/robots">
+			<div class="navlink">Robots</div>
+		</a>
+		<a href="/sponsors">
+			<div class="navlink">Sponsors</div>
+		</a>
+	</nav>
+
+	<div class="waveDiv">
+		<svg viewBox="0 0 500 50" class="waveSvg">
+			<defs>
+				<linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+					<stop offset="0%" stop-color="#222" />
+					<stop offset="80%" stop-color="#070807" />
+					<stop offset="100%" stop-color="#070807" />
+				</linearGradient>
+			</defs>
+			<path class="wavemirrored" d="M 0 15 C 150 50 350 -25 500 15 L 500 50 L 0 50" />
+		</svg>
+	</div>
+
+	<div id="titleScreen">
+		<img src="/assets/robot_pics/firetruck-field-front.webp" alt="Photo of our robot grabbing a sample" id="firetruck-title-img" class="img-contain">
+	</div>
+
+	<div id="header">
+		<h1 class="smallHeader">
+			Cross-District Challenge
+		</h1>
+		<p>
+			2025 Fire fighting competition
+		</p>
+	</div>
+
+
+	<main id="content">
+		<div class="bodyContent">
+			<h2>
+				Drivetrain
+			</h2>
+			<p>
+				Our robot was designed from the ground up to maximize agility as much as possible. With a simple
+				differential drive (tank) design, it is very light and can accelerate quickly. When combined with 1150
+				RPM GoBilda motors, our robot could reach almost 10 km/h. We installed GoBilda Rhino wheels to maintain
+				strong traction, ensuring our robot could navigate various terrains.
+			</p>
+
+			<h2>
+				Intake
+			</h2>
+			<p>
+				We designed a specialized intake for our specific purpose. The primary mechanism is the claw, which uses
+				an elastic band to hold it open. To grab a ball, a cam is rotated to push the arms to close. Each side
+				has spiky points on the inside, to ensure the balls are properly grabbed and do not fall. The claw is
+				held by a virtual 4 bar driven by 2 servos, giving it 2 degrees of freedom: yaw and pitch. This unique
+				arm design causes the claw to always be oriented towards the ground, allowing it to grab balls with
+				ease.
+			</p>
+
+			<h2>
+				Fire extinguishing
+			</h2>
+			<p>
+				The robot features a fan attached to the top of the claw. Due to our virtual 4 bar design, the fan will
+				always point forwards, allowing it to easily reach and extinguish the candles.
+			</p>
+		</div>
+
+	</main>
+	<button id="scrollToTop" type="button" title="Scroll to top"><img src="/assets/top.svg" alt=""></button>
+	<footer>
+		<div id="contactInfo" class="footerColumn">
+			<h3>Contact Info</h3>
+			<ul>
+				<li>Email: <a href="mailto:knotbot22817@gmail.com">knotbot22817@gmail.com</a></li>
+				<li>Phone Number: <a href="tel:+1 604-713-8950">+1 (604)-713-8950</a></li>
+			</ul>
+		</div>
+		<div id="socials" class="footerColumn">
+			<h3>Social Media</h3>
+			<ul>
+				<li>Instagram: <a href="https://instagram.com/killarneyroboticsclub/">@killarneyroboticsclub</a></li>
+			</ul>
+		</div>
+		<div id="location" class="footerColumn">
+			<h3>Location</h3>
+			<ul>
+				<li>Killarney Secondary School</li>
+				<li>6454 Killarney Street, V5S 2X7</li>
+				<li>Vancouver, B.C., Canada</li>
+			</ul>
+		</div>
+		<div id="footerLogo" class="footerColumn">
+			<img class="logo" src="/favicon.svg" alt="Logo of KNOTbot 22817">
+			<h2>KNOTbot</h2>
+		</div>
+	</footer>
+</body>
+
+</html>

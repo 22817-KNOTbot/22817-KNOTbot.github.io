@@ -22,19 +22,18 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="manifest" href="/site.webmanifest">
 	<title>22817 KNOTbot - Our Team</title>
-	<script src="scripts.js" defer></script>
+	<script src="/scripts.js" defer></script>
 </head>
 
 <body>
 	<nav id="navbar">
 		<a href="/">
-			<div class="logo"><img src="assets/logo.webp" alt="Logo of KNOTbot 22817"></div>
-		</a>
-		<a href="/">
-			<div class="navlink">Home</div>
+			<div class="navlink">
+				<div class="logo"><img src="/assets/logo.webp" alt="Logo of KNOTbot 22817"></div>
+			</div>
 		</a>
 		<a href="/team">
-			<div class="navlink">Our Team</div>
+			<div class="navlink">About</div>
 		</a>
 		<a href="/robots">
 			<div class="navlink">Robots</div>
@@ -44,26 +43,16 @@
 		</a>
 	</nav>
 
-	<div id="waveDiv">
-		<svg viewBox="0 0.967 500 48.978" class="waveSvg" id="waveSvg">
+	<div class="waveDiv">
+		<svg viewBox="0 0 500 50" class="waveSvg">
 			<defs>
 				<linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
-					<stop offset="0%" stop-color="#333" />
-					<stop offset="80%" stop-color="#1b1d1b" />
-					<stop offset="100%" stop-color="#1b1d1b" />
+					<stop offset="0%" stop-color="#222" />
+					<stop offset="80%" stop-color="#070807" />
+					<stop offset="100%" stop-color="#070807" />
 				</linearGradient>
 			</defs>
-			<path class="waveout" d="M 0 13.252 C 150 -22.44 350 48.945 500 13.252 L 500 48.945 L 0 48.945"
-				transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)" />
-			<path class="wave" d="M 0 14.252 C 150 -21.44 350 49.945 500 14.252 L 500 49.945 L 0 49.945"
-				transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 3.552713678800501e-15, 0)" />
-
-		</svg>
-		<svg viewBox="0 0.967 500 48.978" class="waveSvg" id="introWaveSvg">
-			<path class="waveout" d="M 0 13.252 C 150 -22.44 350 48.945 500 13.252 L 500 48.945 L 0 48.945"
-				transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)" />
-			<path class="wave" d="M 0 14.252 C 150 -21.44 350 49.945 500 14.252 L 500 49.945 L 0 49.945"
-				transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 3.552713678800501e-15, 0)" />
+			<path class="wavemirrored" d="M 0 15 C 150 50 350 -25 500 15 L 500 50 L 0 50" />
 		</svg>
 	</div>
 
@@ -79,79 +68,97 @@
 
 
 	<main id="content">
-		<h1>
-			Our Team
-		</h1>
-		<div id="profiles">
-			<div class="profile">
-				<div class="profileImgContainer"><img src="/assets/profiles/SereneL.webp"
-						alt="Profile picture of Serene Lee">
+		<div class="bodyContent">
+			<div id="profiles">
+				<div class="profile">
+					<div class="profileImgContainer"><img src="/assets/profiles/BrendanY.webp"
+							alt="Profile picture of Brendan Yap">
+					</div>
+					<div>
+						<h3 class="profileHeader">Brendan Yap</h3>
+						<h5 class="profileHeader">President, Lead Management</h5>
+						<p>Hard worker who excels at many skills such as designing and mechanical engineering.</p>
+					</div>
 				</div>
-				<h3 class="profileHeader">Serene Lee</h3>
-				<h5 class="profileHeader">Head of Fundraising</h5>
-				<p>Mainly focuses on running fundraisers and social media affairs. Also assists with competition tasks
-					as needed.</p>
-			</div>
-			<div class="profile">
-				<div class="profileImgContainer"><img src="/assets/profiles/JohnmichaelP.webp"
-						alt="Profile picture of Johnmichael Palao">
+				<div class="profile">
+					<div class="profileImgContainer"><img src="/assets/profiles/TejasV.webp"
+							alt="Profile picture of Tejas Verma">
+					</div>
+					<div>
+						<h3 class="profileHeader">Tejas Verma</h3>
+						<h5 class="profileHeader">Vice President, Head of Mechanical</h5>
+						<p>Controls much of the team, especially with engineering. Passionate player of baseball.</p>
+					</div>
 				</div>
-				<h3 class="profileHeader">Johnmichael Palao</h3>
-				<h5 class="profileHeader">Design Member</h5>
-				<p>Helps with the design and professional rapper. Innovator, changed the world.</p>
-			</div>
-			<div class="profile">
-				<div class="profileImgContainer"><img src="/assets/profiles/TejasV.webp"
-						alt="Profile picture of Tejas Verma">
+				<div class="profile">
+					<div class="profileImgContainer"><img src="/assets/profiles/EthanW.webp"
+							alt="Profile picture of Ethan Wong">
+					</div>
+					<div>
+						<h3 class="profileHeader">Ethan Wong</h3>
+						<h5 class="profileHeader">Head of Software, Treasurer</h5>
+						<p>Determined member who primarily develops software and manages the club's finances</p>
+					</div>
 				</div>
-				<h3 class="profileHeader">Tejas Verma</h3>
-				<h5 class="profileHeader">Vice President, Head of Mechanical</h5>
-				<p>Controls much of the team, especially with engineering. Passionate player of baseball.</p>
-			</div>
-			<div class="profile">
-				<div class="profileImgContainer"><img src="/assets/profiles/BrendanY.webp"
-						alt="Profile picture of Brendan Yap">
+				<div class="profile">
+					<div class="profileImgContainer"><img src="/assets/profiles/NguyenD.webp"
+							alt="Profile picture of Nguyen Doan">
+					</div>
+					<div>
+						<h3 class="profileHeader">Nguyen Doan</h3>
+						<h5 class="profileHeader">Software</h5>
+						<p>An eager member who works with software. Specializes in visual processing for autonomous
+							movement.
+						</p>
+					</div>
 				</div>
-				<h3 class="profileHeader">Brendan Yap</h3>
-				<h5 class="profileHeader">President, Lead Management</h5>
-				<p>Hard worker who excels at many skills such as designing and mechanical engineering.</p>
-			</div>
-			<div class="profile">
-				<div class="profileImgContainer"><img src="/assets/profiles/EthanW.webp"
-						alt="Profile picture of Ethan Wong">
+				<div class="profile">
+					<div class="profileImgContainer"><img src="/assets/profiles/JohnmichaelP.webp"
+							alt="Profile picture of Johnmichael Palao">
+					</div>
+					<div>
+						<h3 class="profileHeader">Johnmichael Palao</h3>
+						<h5 class="profileHeader">Design Member</h5>
+						<p>Helps with the design and professional rapper. Innovator, changed the world.</p>
+					</div>
 				</div>
-				<h3 class="profileHeader">Ethan Wong</h3>
-				<h5 class="profileHeader">Head of Software, Treasurer</h5>
-				<p>Determined member who primarily develops software and manages the club's finances</p>
-			</div>
-			<div class="profile">
-				<div class="profileImgContainer"><img src="/assets/profiles/NguyenD.webp"
-						alt="Profile picture of Nguyen Doan">
+				<div class="profile">
+					<div class="profileImgContainer"><img src="/assets/profiles/DerickS.webp"
+							alt="Profile picture of Derick Su">
+					</div>
+					<div>
+						<h3 class="profileHeader">Derick Su</h3>
+						<h5 class="profileHeader">Software</h5>
+						<p>Assists other members and runs team activities. Does competition scouting and robot assistance as
+							well.</p>
+					</div>
 				</div>
-				<h3 class="profileHeader">Nguyen Doan</h3>
-				<h5 class="profileHeader">Software</h5>
-				<p>An eager member who works with software. Specializes in visual processing for autonomous movement.
-				</p>
-			</div>
-			<div class="profile">
-				<div class="profileImgContainer"><img src="/assets/profiles/DerickS.webp"
-						alt="Profile picture of Derick Su">
+				<div class="profile">
+					<div class="profileImgContainer"><img src="/assets/profiles/SereneL.webp"
+							alt="Profile picture of Serene Lee">
+					</div>
+					<div>
+						<h3 class="profileHeader">Serene Lee</h3>
+						<h5 class="profileHeader">Head of Fundraising</h5>
+						<p>Mainly focuses on running fundraisers and social media affairs. Also assists with competition
+							tasks
+							as needed.</p>
+					</div>
 				</div>
-				<h3 class="profileHeader">Derick Su</h3>
-				<h5 class="profileHeader">Software</h5>
-				<p>Assists other members and runs team activities. Does competition scouting and robot assistance as
-					well.</p>
 			</div>
 		</div>
-		<p>
-			Our team would not have existed without the assistance from our mentors, Ms. Ali and Mr. Lachelt. They have
-			allowed us to create this team and have helped us along the way.
-		</p>
-		<p>
-			Our team is composed of many hard working and dedicated individuals. As a team, we consistently work
-			together, collaborate, and help each other. We are determined to succeed, creating discussion and trade of
-			ideas nearly every day. We are inclusive of new members and have inspired many others to join our cause.
-		</p>
+
+		<div class="bodyContent">
+			<p>
+				Our team would not have existed without the assistance from our mentors, Ms. Ali and Mr. Lachelt. They have
+				allowed us to create this team and have helped us along the way.
+			</p>
+			<p>
+				Our team is composed of many hard working and dedicated individuals. As a team, we consistently work
+				together, collaborate, and help each other. We are determined to succeed, creating discussion and trade of
+				ideas nearly every day. We are inclusive of new members and have inspired many others to join our cause.
+			</p>
+		</div>
 	</main>
 	<button id="scrollToTop" type="button" title="Scroll to top"><img src="/assets/top.svg" alt=""></button>
 	<footer>
@@ -177,7 +184,7 @@
 			</ul>
 		</div>
 		<div id="footerLogo" class="footerColumn">
-			<img class="logo" src="favicon.svg" alt="Logo of KNOTbot 22817">
+			<img class="logo" src="/favicon.svg" alt="Logo of KNOTbot 22817">
 			<h2>KNOTbot</h2>
 		</div>
 	</footer>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Ethan Wong">
+	<meta name="description" content="FTC KNOTbot 22817">
+	<meta name="keywords" content="FIRST, FTC, robotics, killarney, KNOTbot, 22817">
+	<meta name="theme-color" content="#1b1d1b">
+	<meta name="color-scheme" content="dark">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="KNOTbot 22817">
+	<meta property="og:image" content="/assets/logo.webp">
+	<meta property="og:description" content="FTC team 22817 KNOTbot">
+
+	<link rel="stylesheet" href="/styles.css">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<title>22817 KNOTbot - FTC Into The Deep</title>
+	<script src="/scripts.js" defer></script>
+</head>
+
+<body>
+	<nav id="navbar">
+		<a href="/">
+			<div class="navlink">
+				<div class="logo"><img src="/assets/logo.webp" alt="Logo of KNOTbot 22817"></div>
+			</div>
+		</a>
+		<a href="/team">
+			<div class="navlink">About</div>
+		</a>
+		<a href="/robots">
+			<div class="navlink">Robots</div>
+		</a>
+		<a href="/sponsors">
+			<div class="navlink">Sponsors</div>
+		</a>
+	</nav>
+
+	<div class="waveDiv">
+		<svg viewBox="0 0 500 50" class="waveSvg">
+			<defs>
+				<linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+					<stop offset="0%" stop-color="#222" />
+					<stop offset="80%" stop-color="#070807" />
+					<stop offset="100%" stop-color="#070807" />
+				</linearGradient>
+			</defs>
+			<path class="wavemirrored" d="M 0 15 C 150 50 350 -25 500 15 L 500 50 L 0 50" />
+		</svg>
+	</div>
+
+	<div id="titleScreen">
+		<img src="/assets/robot_pics/robot_grabbing.webp" alt="Photo of our robot grabbing a sample">
+	</div>
+
+	<div id="header">
+		<h1 class="smallHeader">
+			Into The Deep
+		</h1>
+		<p>
+			FTC 2024-2025
+		</p>
+	</div>
+
+
+	<main id="content">
+		<div class="bodyContent">
+			<h2>
+				Drivetrain
+			</h2>
+			<p>
+				Our robot is versatile, protected, and agile. Versatile: GoBILDA U-Channel allows for a multitude of
+				mounting options, and we modified our pieces of channel to contain only the parts we needed, saving
+				weight. Protected: 3D-printed bumpers, Control Hub mounts, and a ramp prevent any sample from getting
+				stuck under or inside our robot. By covering up the space needed for other subsystems, we can afford the
+				ability to drive and operate carefree. Agile: Using the GoBILDA mecanum wheels, we were able to create
+				an agile and efficient way of moving around the field.
+			</p>
+
+			<h2>
+				Intake
+			</h2>
+			<div class="p-img-div-right">
+				<p>
+					Our specialized point-tipped claw efficiently picks out samples in dense clusters, allowing us to take
+					our alliance-specific sample from the submersible and increase our teleop score. An integrated camera
+					provides detection and location of the sample in the submersible, allowing intaking to be automated and
+					reducing human error. Using our odometry and some trigonometry, the field-centric claw stays at the same
+					angle and position no matter where the robot is on the field or what direction it is facing, enabling
+					the driver to input controls from their perspective instead of the robot’s and making intaking much less
+					complicated. Finally, instead of belted or strung extensions, we used a linkage for quick and reliable
+					intaking, run by a single 117 RPM GoBilda motor, providing high speed, torque, and precision.
+				</p>
+				<img src="/assets/robot_pics/robot_grabbing_close.webp" style="width: 40%;" alt="Photo of our robot grabbing a sample">
+			</div>
+
+			<h2>
+				Deposit
+			</h2>
+			<p>
+				Our robot’s extension, arm, and claw were designed for speed, strength, and reliability. Using two
+				belt-driven GoBILDA Viper Slides powered by 435 RPM motors, we created a quick and strong extension
+				system for depositing samples and specimens. For our deposit arm, we implemented a Coaxial Virtual 4 Bar
+				(CV4B) mechanism, as it is reliable, agile, and keeps the majority of the load off the end of the arm.
+				This arm is powered by three main servos, two for driving and turning the bars, and one for coaxial
+				tilt. The two drive servos rotate the main arm around the coaxial shaft, allowing it to move
+				independently from the shaft itself, while the coaxial servo controls the shaft, which is belted to the
+				end effector to manage tilt. Our claw was 3D printed from ABS filament to be rigid and strong, and is
+				thicker than our intake claw to effectively grab and score specimens without accidentally releasing
+				them.
+			</p>
+
+			<h2>
+				Ascent
+			</h2>
+			<p>
+				To keep our design simple and space-efficient, we integrated our hooks directly into the CV4B mounts.
+				This approach not only saves space but also distributes the load evenly across a larger area, improving
+				durability during climbs. However, the angles of our deposit slides caused the back of the robot to
+				scrape against the bottom rung of the submersible during ascent, preventing a successful pull-up. To
+				address this, we added horizontal rollers to the back of the robot, allowing them to roll smoothly
+				against the rung and enable a clean, consistent climb.
+			</p>
+		</div>
+
+	</main>
+	<button id="scrollToTop" type="button" title="Scroll to top"><img src="/assets/top.svg" alt=""></button>
+	<footer>
+		<div id="contactInfo" class="footerColumn">
+			<h3>Contact Info</h3>
+			<ul>
+				<li>Email: <a href="mailto:knotbot22817@gmail.com">knotbot22817@gmail.com</a></li>
+				<li>Phone Number: <a href="tel:+1 604-713-8950">+1 (604)-713-8950</a></li>
+			</ul>
+		</div>
+		<div id="socials" class="footerColumn">
+			<h3>Social Media</h3>
+			<ul>
+				<li>Instagram: <a href="https://instagram.com/killarneyroboticsclub/">@killarneyroboticsclub</a></li>
+			</ul>
+		</div>
+		<div id="location" class="footerColumn">
+			<h3>Location</h3>
+			<ul>
+				<li>Killarney Secondary School</li>
+				<li>6454 Killarney Street, V5S 2X7</li>
+				<li>Vancouver, B.C., Canada</li>
+			</ul>
+		</div>
+		<div id="footerLogo" class="footerColumn">
+			<img class="logo" src="/favicon.svg" alt="Logo of KNOTbot 22817">
+			<h2>KNOTbot</h2>
+		</div>
+	</footer>
+</body>
+
+</html>

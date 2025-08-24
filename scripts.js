@@ -13,12 +13,19 @@ const scrollFunction = () => {
 
 	const navbar = document.getElementById("navbar");
 	if (prevScrollPos < currentScrollPos && currentScrollPos > 20) {
-		navbar.style.top = "-20vh";
+		if (!navbar.matches(":hover")) {
+			navbar.classList.add("collapsed");
+		}
 	} else {
-		navbar.style.top = "0";
+		navbar.classList.remove("collapsed");
 	}
 	prevScrollPos = currentScrollPos;
 };
+
+const navbar = document.getElementById("navbar");
+navbar.addEventListener("mouseenter", () => {
+	navbar.classList.remove("collapsed");
+});
 
 window.addEventListener("scroll", scrollFunction);
 scrollFunction();
@@ -26,20 +33,6 @@ scrollFunction();
 scrollToTop.onclick = () => {
 	scrollTo({ top: 0, behavior: "smooth" });
 };
-
-// Intro wave animation
-const introWave = document.getElementById("introWaveSvg");
-const wave = document.getElementById("waveSvg");
-
-if (introWave && wave) {
-	window.addEventListener("load", () => {
-		const slowAnimation = (event) => {
-			event.target.style.animation = "introWaveAnimation none 8s 2s infinite linear";
-		};
-		introWave.addEventListener('animationend', slowAnimation);
-		wave.addEventListener('animationend', slowAnimation);
-	});
-}
 
 // Bouncing loading text
 const bounce = document.getElementById("loading-text");
@@ -73,28 +66,23 @@ if (bounce) {
 	applyBounce(0, 0);
 }
 
-// Profile Spread Animation
-const profiles = document.getElementById("profiles");
-if (profiles) {
-	profiles.classList.add("profilesCollapsed");
+const robotCards = document.getElementsByClassName("robotCard");
+if (robotCards.length > 0 /* && !CSS.supports("animation-timline", "scroll()") */) {
+	for (const robotCard of robotCards) {
+		robotCard.style.animationPlayState = "paused";
+	}
 	const scrollObserver = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
-				Array.from(document.getElementsByClassName("profile")).forEach(element => {
-					// element.style.transform = "translate(0, calc(5vh * (4 - var(--layer))))";
-					profiles.classList.remove("profilesCollapsed");
-				});
-			} else if (entry.boundingClientRect.y > 0) {
-				Array.from(document.getElementsByClassName("profile")).forEach(element => {
-					// element.style.transform = "";
-					profiles.classList.add("profilesCollapsed");
-				});
+				for (const robotCard of robotCards) {
+					robotCard.style.animationPlayState = "running";
+				}
 			}
 		});
 	}, {
 		threshold: 0,
 	});
-	scrollObserver.observe(profiles);
+	scrollObserver.observe(document.getElementById("robotsContent"));
 }
 
 // Sponsor Tier effect
@@ -105,12 +93,6 @@ document.addEventListener("mousemove", (event) => {
 
 		card.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`);
 		card.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`);
-	}
-
-	// Navbar show when mouse near top
-	const navbar = document.getElementById("navbar");
-	if (event.clientY < 50) {
-		navbar.style.top = "0";
 	}
 });
 

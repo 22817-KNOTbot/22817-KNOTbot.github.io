@@ -23,19 +23,18 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="manifest" href="/site.webmanifest">
 	<title>22817 KNOTbot - Home</title>
-	<script src="scripts.js" defer></script>
+	<script src="/scripts.js" defer></script>
 </head>
 
 <body>
 	<nav id="navbar">
 		<a href="/">
-			<div class="logo"><img src="assets/logo.webp" alt="Logo of KNOTbot 22817"></div>
-		</a>
-		<a href="/">
-			<div class="navlink">Home</div>
+			<div class="navlink">
+				<div class="logo"><img src="/assets/logo.webp" alt="Logo of KNOTbot 22817"></div>
+			</div>
 		</a>
 		<a href="/team">
-			<div class="navlink">Our Team</div>
+			<div class="navlink">About</div>
 		</a>
 		<a href="/robots">
 			<div class="navlink">Robots</div>
@@ -45,101 +44,109 @@
 		</a>
 	</nav>
 
-	<div id="waveDiv">
-		<svg viewBox="0 0.967 500 48.978" class="waveSvg" id="waveSvg">
+	<div class="waveDiv">
+		<svg viewBox="0 0 500 50" class="waveSvg">
 			<defs>
 				<linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
-					<stop offset="0%" stop-color="#333" />
-					<stop offset="80%" stop-color="#1b1d1b" />
-					<stop offset="100%" stop-color="#1b1d1b" />
+					<stop offset="0%" stop-color="#222" />
+					<stop offset="80%" stop-color="#070807" />
+					<stop offset="100%" stop-color="#070807" />
 				</linearGradient>
 			</defs>
-			<path class="waveout" d="M 0 13.252 C 150 -22.44 350 48.945 500 13.252 L 500 48.945 L 0 48.945"
-				transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)" />
-			<path class="wave" d="M 0 14.252 C 150 -21.44 350 49.945 500 14.252 L 500 49.945 L 0 49.945"
-				transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 3.552713678800501e-15, 0)" />
-
-		</svg>
-		<svg viewBox="0 0.967 500 48.978" class="waveSvg" id="introWaveSvg">
-			<path class="waveout" d="M 0 13.252 C 150 -22.44 350 48.945 500 13.252 L 500 48.945 L 0 48.945"
-				transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)" />
-			<path class="wave" d="M 0 14.252 C 150 -21.44 350 49.945 500 14.252 L 500 49.945 L 0 49.945"
-				transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 3.552713678800501e-15, 0)" />
+			<path class="wavemirrored" d="M 0 15 C 150 50 350 -25 500 15 L 500 50 L 0 50" />
 		</svg>
 	</div>
 
 	<div id="titleScreen">
-		<div id="slideshowWindow">
-			<div>
-				<input type="checkbox" id="slideshowPause" aria-label="Pause">
-			</div>
-			<img src="/assets/robot.webp" alt="Photo of our robot">
-			<img src="/assets/robot_pics/robot_grabbed_side.webp" alt="Photo of our robot holding a sample">
-			<img src="/assets/robot_pics/robot_overview.webp" alt="Photo of our robot">
-		</div>
+		<img src="/assets/robot_pics/robot_grabbed.webp" alt="Photo of our robot holding a sample">
 	</div>
 
 	<div id="header">
+		<p>22817</p>
 		<h1>
-			22817 KNOTbot
+			KNOTbot
 		</h1>
+		<p>
+			A night of inspiration, connection, and a chance to make a real impact
+		</p>
 	</div>
 
 
 	<main id="content">
-		<h1>
-			Our Team
-		</h1>
-		<p>
-			Our team would not have existed without the assistance from our mentors, Ms. Ali and Mr. Lachelt. They have
-			allowed us to create this team and have helped us along the way.
-		</p>
-		<p>
-			Our team is composed of many hard working and dedicated individuals. As a team, we consistently work
-			together, collaborate, and help each other. We are determined to succeed, creating discussion and trade of
-			ideas nearly every day. We are inclusive of new members and have inspired many others to join our cause.
-		</p>
-
-		<h1>
-			Our Mission
-		</h1>
-		<p>
-			We believe our team should be more than building robots. By having an end goal, we learn to work towards
-			great things, one step at a time. Robotics encourages people to step out of their comfort zone and try
-			something new. It stimulates collaboration with people we normally would not, and allows the use technology
-			which is normally inaccessible. Due to the vast nature of robotics, it allows us to learn and teach the many
-			involved subjects: math, physics, engineering, technology use, software development, and much more. Not only
-			does it provoke intellectual growth, we practice goal setting, time management, problem solving, and
-			critical thinking. We believe participating in robotics encourages us to become better people.
-		</p>
-
-		<h1>
-			Our Work
-		</h1>
-		<div class="p-img-div-left">
-			<img src="assets/robot_pics/robot_grabbed_side.webp" alt="Photo of our robot holding a sample"
-				class="left-p-img">
-			<div>
-				<h2>2024-2025 Into the Deep Robot (FTC)</h2>
-				<p>
-					In our 2nd year of FTC, this robot is the culmination of our 1st year of learning and over six
-					months of hard work. Full of innovative uses of 3D printing and featuring over ten degrees of
-					freedom, this is our best robot yet. You can read more about it <a href="robots#FTC2024">here</a>.
-				</p>
+		<div class="bodyContent">
+			<div class="p-img-div-left">
+				<img src="/assets/ikea.jpg" alt="Photo of our robot holding a sample" class="left-p-img">
+				<div>
+					<h2>
+						Our Mission
+					</h2>
+					<p>
+						We believe our team should be more than building robots. By having an end goal, we learn to work
+						towards great things, one step at a time. Robotics encourages people to step out of their
+						comfort zone and try something new. It stimulates collaboration with people we normally would
+						not, and allows the use technology which is normally inaccessible. Due to the vast nature of
+						robotics, it allows us to learn and teach the many involved subjects: math, physics,
+						engineering, technology use, software development, and much more. Not only does it provoke
+						intellectual growth, we practice goal setting, time management, problem solving, and critical
+						thinking. We believe participating in robotics encourages us to become better people.
+					</p>
+				</div>
 			</div>
 		</div>
-		<div class="p-img-div-right">
-			<div>
-				<h2>2025 Fire Fighting Competition</h2>
-				<p>
-					This year, we have been lucky to be invited to participate in a
-					cross-district fire fighting competition. The object of the competition is to put out as many fires
-					(candles) as possible all while trying to avoid obstacles, picking up balls, and getting the best
-					time.
-				</p>
+
+		<div class="contentWaveDiv">
+			<svg viewBox="0 0 500 50" class="waveSvg">
+				<defs>
+					<linearGradient id="closing-gradient" x1="0" x2="0" y1="0" y2="1">
+						<stop offset="0%" stop-color="#070807" />
+						<stop offset="80%" stop-color="#222" />
+						<stop offset="100%" stop-color="#222" />
+					</linearGradient>
+				</defs>
+				<path class="wavemirrored waveupsidedown" d="M 0 50 C 150 0 350 75 500 35 L 500 0 L 0 0" />
+			</svg>
+		</div>
+
+		<div id="awardsDiv">
+			<img src="/assets/robot_pics/robot_overview.webp" alt="Photo of our robot" class="awardsImg">
+			<img src="/assets/robot_pics/robot_overview_layer.webp" alt="Photo of our robot"
+				class="awardsImg awardsImgLayer">
+			<div id="awardsContent">
+				<h2>
+					Awards
+				</h2>
+				<div id="awardsList">
+					<div class="award">3<sup>rd</sup> place Innovate Award</div>
+					<div class="award">1<sup>st</sup> place Think Award</div>
+					<div class="award">2<sup>nd</sup> place Control Award</div>
+				</div>
 			</div>
-			<img src="assets/robot_pics/firetruck-field-front.webp" alt="Photo of our robot holding a sample"
-				class="right-p-img">
+		</div>
+
+		<div id="robotsDiv">
+			<h2>Robots</h2>
+			<div id="robotsContent">
+				<a href="robots#FTC2023" class="robotCard">
+					<div class="robotCardImg">
+						<img src="/assets/robot_pics/ftc_2023_robot.webp" alt="A photo of our Centerstage robot"
+							class="img-contain">
+					</div>
+					<h3>FTC 2023 Centerstage</h3>
+				</a>
+				<a href="robots/FTC_Into_The_Deep" class="robotCard">
+					<div class="robotCardImg">
+						<img src="/assets/robot_pics/ftc_2024_robot.webp" alt="A photo of our Into The Deep robot">
+					</div>
+					<h3>FTC 2024 Into The Deep</h3>
+				</a>
+				<a href="robots/Cross-District_Challenge" class="robotCard">
+					<div class="robotCardImg">
+						<img src="/assets/robot_pics/firetruck-field-front.webp"
+							alt="A photo of our Fire Fighting robot">
+					</div>
+					<h3>Cross-district Fire Fighting Competition 2025</h3>
+				</a>
+			</div>
 		</div>
 	</main>
 	<button id="scrollToTop" type="button" title="Scroll to top"><img src="/assets/top.svg" alt=""></button>
@@ -166,8 +173,8 @@
 			</ul>
 		</div>
 		<div id="footerLogo" class="footerColumn">
-			<img class="logo" src="favicon.svg" alt="Logo of KNOTbot 22817">
-			<h2>KNOTbot</h2>
+			<img class="logo" src="/favicon.svg" alt="Logo of KNOTbot 22817">
+			<h3>KNOTbot</h3>
 		</div>
 	</footer>
 </body>
