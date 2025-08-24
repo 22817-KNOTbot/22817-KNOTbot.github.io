@@ -2,19 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://knotbot22817.github.io/</loc>
+  <loc>https://22817-knotbot.github.io/</loc>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://knotbot22817.github.io/robot</loc>
+  <loc>https://22817-knotbot.github.io/team</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://knotbot22817.github.io/funding</loc>
+  <loc>https://22817-knotbot.github.io/robots</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://knotbot22817.github.io/sponsors</loc>
+  <loc>https://22817-knotbot.github.io/robots/FTC_Into_The_Deep</loc>
+  <priority>0.20</priority>
+</url>
+<url>
+  <loc>https://22817-knotbot.github.io/robots/Cross-District_Challenge</loc>
+  <priority>0.20</priority>
+</url>
+<url>
+  <loc>https://22817-knotbot.github.io/sponsors</loc>
   <priority>0.80</priority>
 </url>
 
