@@ -835,12 +835,12 @@ footer {
 #sponsorContactButtons {
 	display: flex;
 	width: 100%;
+	margin-bottom: 5vh;
 }
 
 .sponsorContactButton {
 	flex: 1;
 	text-decoration: none;
-	margin-bottom: 5vh;
 	transition: flex 300ms cubic-bezier(0.175, 0.885, 0.48, 1.275);
 }
 
