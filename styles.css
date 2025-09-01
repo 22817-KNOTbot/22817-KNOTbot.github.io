@@ -5,7 +5,8 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(/assets/fonts/Nunito.woff2) format('woff2');
+	src: url(/assets/fonts/Nunito-US_ASCII.woff2) format('woff2');
+	font-display: fallback;
 }
 
 @media (prefers-reduced-motion: no-preference) {
