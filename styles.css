@@ -189,6 +189,7 @@ h2 {
 	width: 100%;
 	height: 100%;
 	position: absolute;
+
 	&:not(.img-contain) {
 		object-fit: cover;
 	}
@@ -450,6 +451,30 @@ h2 {
 	background-size: 50%;
 }
 
+.fullHeader .fullHeaderCol {
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-evenly;
+	width: 30%;
+	padding: 0 5%;
+	box-sizing: border-box;
+	z-index: -1;
+}
+
+.fullHeader .fullHeaderCol.fullHeaderLeftCol {
+	left: 0;
+}
+
+.fullHeader .fullHeaderCol.fullHeaderRightCol {
+	right: 0;
+}
+
+.fullHeader .fullHeaderCol img {
+	width: 100%;
+}
+
 h1:not(:first-of-type) {
 	margin-top: 10vh;
 }
@@ -609,6 +634,7 @@ img.img-contain {
 .robotCardImg>img {
 	width: 100%;
 	height: 100%;
+
 	&:not(.img-contain) {
 		object-fit: cover;
 	}
@@ -655,22 +681,30 @@ img.img-contain {
 	margin: 0 auto;
 }
 
-#sponsors {
-	margin-bottom: 5vh;
-}
-
-#sponsorLogos {
-	display: flex;
-}
-
-#sponsorLogos>.sponsorColumn {
-	width: clamp(300px, 50%, 800px);
+#sponsorsDiv {
+	width: 100vw;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	padding-top: 5vh;
+}
 
-	& img {
-		width: 100%;
-	}
+#sponsorsRow {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 50%;
+	padding: 5% 0;
+}
+
+.sponsor {
+	width: 40%;
+	height: 100%;
+}
+
+.sponsor img {
+	width: 100%;
 }
 
 #scrollToTop {
