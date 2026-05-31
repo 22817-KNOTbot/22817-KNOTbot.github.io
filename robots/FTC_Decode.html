@@ -24,7 +24,7 @@
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="manifest" href="/site.webmanifest">
-	<title>22817 KNOTbot - Cross-District Challenge</title>
+	<title>22817 KNOTbot - FTC Decode</title>
 	<script src="/scripts.js" defer></script>
 	<script>
 		!function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))); }; } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e; }, u.people.toString = function () { return u.toString(1) + ".people (stub)"; }, o = "init Re Ms Fs Pe Rs Cs capture Ve calculateEventProperties Ds register register_once register_for_session unregister unregister_for_session zs getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Ls As createPersonProfile Ns Is Us opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing is_capturing clear_opt_in_out_capturing Os debug I js getPageViewId captureTraceFeedback captureTraceMetric".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]); }, e.__SV = 1); }(document, window.posthog || []);
@@ -56,9 +56,9 @@
 			<div class="navlink">Sponsors</div>
 		</a>
 	</nav>
-	
+
 	<div id="titleScreen">
-		<img src="/assets/robot_pics/firetruck-field-front.webp" alt="Photo of our robot grabbing a sample" id="firetruck-title-img" class="img-contain">
+		<img src="/assets/robot_pics/robot_grabbing.webp" alt="Photo of our robot grabbing a sample">
 		<div class="waveDiv">
 			<svg viewBox="0 0 500 50" class="waveSvg">
 				<defs>
@@ -75,10 +75,10 @@
 
 	<div id="header">
 		<h1 class="smallHeader">
-			Cross-District Challenge
+			Decode
 		</h1>
 		<p>
-			2025 Fire fighting competition
+			FTC 2025-2026
 		</p>
 	</div>
 
@@ -86,33 +86,44 @@
 	<main id="content">
 		<div class="bodyContent">
 			<h2>
-				Drivetrain
+				Chassis
 			</h2>
 			<p>
-				Our robot was designed from the ground up to maximize agility as much as possible. With a simple
-				differential drive (tank) design, it is very light and can accelerate quickly. When combined with 1150
-				RPM GoBilda motors, our robot could reach almost 10 km/h. We installed GoBilda Rhino wheels to maintain
-				strong traction, ensuring our robot could navigate various terrains.
+				Our robot uses a custom chassis manufactured with carbon fibre to allow for customizability while
+				maintaining rigidity. The lightweight material in combination with a 500 RPM drivetrain balanced agility
+				and strength, being able to score elements quickly and withstand inteferences. Each outer plate had
+				material removed in a specific way to further reduce weight while maintaining strength where needed.
 			</p>
 
 			<h2>
 				Intake
 			</h2>
-			<p>
-				We designed a specialized intake for our specific purpose. The primary mechanism is the claw, which uses
-				an elastic band to hold it open. To grab a ball, a cam is rotated to push the arms to close. Each side
-				has spiky points on the inside, to ensure the balls are properly grabbed and do not fall. The claw is
-				held by a virtual 4 bar driven by 2 servos, giving it 2 degrees of freedom: yaw and pitch. This unique
-				arm design causes the claw to always be oriented towards the ground, allowing it to grab balls with
-				ease.
-			</p>
+			<div class="p-img-div-right">
+				<p>
+					The intake was designed with robustness in mind. It uses custom developed vector and silicone
+					wheels to suit our specific needs. The vector wheels funnel balls towards the centre of the
+					robot, even against walls and corners. Once the balls are inside the robot, the transfer system
+					takes over. It utilizes surgical tubing and back wheels to remove dead spots and provide
+					constant force to every ball. Every step of the process is controlled by a software system
+					utilizing multiple sensors to prevent jamming and ensure smooth ball flow. It automatically
+					disables the intake when at max capacity to prevent fouls.
+				</p>
+				<img src="/assets/robot_pics/robot_grabbing_close_2.webp" style="width: 40%;"
+					alt="Photo of our robot grabbing a sample">
+			</div>
 
 			<h2>
-				Fire extinguishing
+				Shooter
 			</h2>
 			<p>
-				The robot features a fan attached to the top of the claw. Due to our virtual 4 bar design, the fan will
-				always point forwards, allowing it to easily reach and extinguish the candles.
+				To maximize maneuverability on the field, we built a 360 degree turret allowing us to aim from anywhere.
+				Our turret uses a bearing stack to be thin yet sturdy, powered by 2 Axon Mini servos for high speed with
+				full rotational range. The shooter has an adjustable hood to control the projectile trajectory, and 2
+				bare motors to keep a small form-factor and high velocities. Roughly 450g of steel flywheels are
+				attached to increase the moment of inertia and shooting consistency. Each component is controlled using
+				advanced software programs which use physics equations and closed loop controllers, maximizing accuracy
+				and efficiency. The entire targeting system is autonomously controlled without human input for ease of
+				driving.
 			</p>
 		</div>
 

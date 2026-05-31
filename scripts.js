@@ -67,7 +67,7 @@ if (bounce) {
 }
 
 const robotCards = document.getElementsByClassName("robotCard");
-if (robotCards.length > 0 /* && !CSS.supports("animation-timline", "scroll()") */) {
+if (robotCards.length > 0) {
 	for (const robotCard of robotCards) {
 		robotCard.style.animationPlayState = "paused";
 	}

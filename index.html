@@ -16,7 +16,8 @@
 	<meta property="og:image" content="/assets/logo.webp">
 	<meta property="og:description" content="FTC team 22817 KNOTbot">
 
-	<link rel="preload" href="/assets/fonts/Nunito-US_ASCII.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/fonts/Nunito-subset.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/fonts/Formula1-subset.woff2" as="font" type="font/woff2" crossorigin>
 
 	<link rel="stylesheet" href="styles.css">
 	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
@@ -129,9 +130,18 @@
 					Awards
 				</h2>
 				<div id="awardsList">
-					<div class="award">3<sup>rd</sup> place Innovate Award</div>
-					<div class="award">1<sup>st</sup> place Think Award</div>
-					<div class="award">2<sup>nd</sup> place Control Award</div>
+					<div class="award">
+						<h3>1<sup>st</sup> place Think Award</h3>
+						Jan. 2025
+					</div>
+					<div class="award">
+						<h3>1<sup>st</sup> place Innovate Award</h3>
+						Dec. 2025
+					</div>
+					<div class="award">
+						<h3>2<sup>nd</sup> place Control Award</h3>
+						Feb. 2025
+					</div>
 				</div>
 			</div>
 		</div>
@@ -139,18 +149,18 @@
 		<div id="robotsDiv">
 			<h2>Robots</h2>
 			<div id="robotsContent">
-				<a href="robots#FTC2023" class="robotCard">
-					<div class="robotCardImg">
-						<img src="/assets/robot_pics/ftc_2023_robot.webp" alt="A photo of our Centerstage robot"
-							class="img-contain">
-					</div>
-					<h3>FTC 2023 Centerstage</h3>
-				</a>
 				<a href="robots/FTC_Into_The_Deep" class="robotCard">
 					<div class="robotCardImg">
 						<img src="/assets/robot_pics/ftc_2024_robot.webp" alt="A photo of our Into The Deep robot">
 					</div>
 					<h3>FTC 2024 Into The Deep</h3>
+				</a>
+				<a class="robotCard highlighted">
+				<!-- <a href="robots/FTC_Decode.html" class="robotCard highlighted"> -->
+					<div class="robotCardImg">
+						<img src="/assets/robot_pics/ftc_2025_robot.webp" alt="A photo of our Decode robot">
+					</div>
+					<h3>FTC 2025 Decode</h3>
 				</a>
 				<a href="robots/Cross-District_Challenge" class="robotCard">
 					<div class="robotCardImg">
@@ -159,22 +169,6 @@
 					</div>
 					<h3>Cross-district Fire Fighting Competition 2025</h3>
 				</a>
-			</div>
-		</div>
-
-		<div id="sponsorsDiv">
-			<h2>Sponsors</h2>
-			<div id="sponsorsRow">
-				<div class="sponsor">
-					<a href="https://polymaker.com/" target="_blank" rel="noopener">
-						<img src="/assets/sponsors/polymaker.svg" alt="Logo of Polymaker">
-					</a>
-				</div>
-				<div class="sponsor">
-					<a href="https://www.protocase.com/" target="_blank" rel="noopener">
-						<img src="/assets/sponsors/protocase-white.png" alt="Logo of Protocase">
-					</a>
-				</div>
 			</div>
 		</div>
 	</main>
@@ -203,7 +197,28 @@
 		</div>
 		<div id="footerLogo" class="footerColumn">
 			<img class="logo" src="/favicon.svg" alt="Logo of KNOTbot 22817">
-			<h3>KNOTbot</h3>
+			<h2>KNOTbot</h2>
+		</div>
+
+		<div id="sponsorsDiv">
+			<h2>Sponsors</h2>
+			<div id="sponsorsRow">
+				<div class="sponsor">
+					<a href="https://polymaker.com/" target="_blank" rel="noopener">
+						<img src="/assets/sponsors/polymaker.svg" alt="Logo of Polymaker">
+					</a>
+				</div>
+				<div class="sponsor">
+					<a href="https://www.ghaasfoundation.org/" target="_blank" rel="noopener">
+						<img src="/assets/sponsors/gene-haas.webp" alt="Logo of Gene Haas Foundation">
+					</a>
+				</div>
+				<div class="sponsor">
+					<a href="https://cncmadness.com/" target="_blank" rel="noopener">
+						<img src="/assets/sponsors/cnc-madness.svg" alt="Logo of CNC Madness">
+					</a>
+				</div>
+			</div>
 		</div>
 	</footer>
 </body>

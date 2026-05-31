@@ -1,11 +1,18 @@
 :root {
 	--background-color: hsl(120, 4%, 3%);
+	--secondary-background-color: hsl(120, 4%, 8%);
 	--footer-background-color: hsl(120, 4%, 7%);
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(/assets/fonts/Nunito-US_ASCII.woff2) format('woff2');
+	src: url(/assets/fonts/Nunito-subset.woff2) format('woff2');
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'Formula 1';
+	src: url(/assets/fonts/Formula1-subset.woff2) format('woff2');
 	font-display: fallback;
 }
 
@@ -56,7 +63,7 @@
 
 	@keyframes robotSpread {
 		0% {
-			transform: translateX(calc((100% + 10vw) * var(--offset)));
+			transform: translateX(calc(100% * var(--offset))) translateY(calc((min(70vh, 80vw) - 100%) * var(--offset-y)));
 		}
 
 		40% {
@@ -68,14 +75,14 @@
 @media (min-width: 1000px) {
 	:root {
 		--content-width: clamp(200px, 60vw, 1500px);
-		--navbar-width: clamp(200px, 40vw, 1500px);
+		--navbar-width: clamp(200px, 60vw, 1500px);
 	}
 }
 
 @media (max-width: 1000px) {
 	:root {
 		--content-width: clamp(200px, 80vw, 1500px);
-		--navbar-width: clamp(200px, 40vw, 1500px);
+		--navbar-width: clamp(200px, 60vw, 1500px);
 	}
 }
 
@@ -108,6 +115,13 @@ main#content {
 h1,
 h2 {
 	scroll-margin-top: 15vh;
+}
+
+h1,
+h2,
+h3,
+.navlink {
+	font-family: "Formula 1", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #navbar {
@@ -407,7 +421,7 @@ h2 {
 
 #header>h1 {
 	margin: 0;
-	font-size: clamp(50px, 10vw, 10rem);
+	font-size: clamp(50px, 8vw, 10rem);
 }
 
 #header>h1.smallHeader {
@@ -489,8 +503,9 @@ h2 {
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
+	align-items: start;
 	gap: 10%;
-	margin: 5vh 0;
+	margin: 0;
 
 	&>* {
 		max-width: 50%;
@@ -546,7 +561,7 @@ img.img-contain {
 	top: 20%;
 	left: 0;
 	width: 100%;
-	height: 60%;
+	height: 55%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -556,7 +571,7 @@ img.img-contain {
 
 #awardsContent>#awardsList {
 	width: 100%;
-	height: 20vh;
+	height: max(25vh, 150px);
 	display: flex;
 	justify-content: space-evenly;
 	align-items: end;
@@ -569,6 +584,12 @@ img.img-contain {
 	border: 1px solid white;
 	border-radius: 10vw;
 	text-align: center;
+	background-color: hsla(0, 0%, 100%, 8%);
+	backdrop-filter: blur(5px);
+
+	&>h3 {
+		margin: 0;
+	}
 }
 
 #awardsList>.award:nth-child(2) {
@@ -577,7 +598,7 @@ img.img-contain {
 
 #robotsDiv {
 	width: 100vw;
-	height: 100vh;
+	height: min(100vh, 110vw);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -588,7 +609,15 @@ img.img-contain {
 	display: flex;
 	justify-content: space-evenly;
 	width: 80%;
-	gap: 10vw
+	height: min(70vh, 80vw);
+}
+
+#robotsDiv::before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 80%;
 }
 
 .robotCard {
@@ -600,22 +629,35 @@ img.img-contain {
 	text-decoration: none;
 	transition: transform 1.5s;
 	animation: robotSpread 3s forwards;
-	/* animation-timeline: view(); */
+	align-self: end;
+	max-width: 20vw;
 }
 
 .robotCard:nth-child(1) {
 	--offset: 1;
+	--offset-y: -1;
 	z-index: 1;
 }
 
 .robotCard:nth-child(2) {
 	--offset: 0;
+	--offset-y: 0;
 	z-index: 2;
+	align-self: start;
 }
 
 .robotCard:nth-child(3) {
 	--offset: -1;
+	--offset-y: -1;
 	z-index: 1;
+}
+
+.robotCard.highlighted>.robotCardImg {
+	box-shadow: 0 0 2000px 5vmax rgba(255, 255, 255, 0.2);
+}
+
+.robotCard>h3 {
+	height: 2lh;
 }
 
 .robotCard>p {
@@ -624,11 +666,12 @@ img.img-contain {
 
 .robotCardImg {
 	position: relative;
-	height: 20vw;
-	width: 20vw;
+	height: min(20vw, 50vh);
+	width: min(20vw, 50vh);
 	border: 1px solid white;
 	border-radius: 10%;
 	overflow: hidden;
+	aspect-ratio: 1;
 }
 
 .robotCardImg>img {
@@ -644,7 +687,7 @@ img.img-contain {
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	gap: 5vh 5vw;
 }
 
@@ -654,6 +697,7 @@ img.img-contain {
 	gap: 1vw;
 	align-items: center;
 	text-align: center;
+	min-width: 300px;
 }
 
 .profile>* {
@@ -681,8 +725,34 @@ img.img-contain {
 	margin: 0 auto;
 }
 
+.robotOverviewAnchor {
+	text-decoration: none;
+	display: block;
+	margin: 2vh 0;
+
+	&:first-child {
+		margin-top: 3vh;
+	}
+}
+
+.robotOverviewCard {
+	box-sizing: border-box;
+	padding: 2vw;
+	border-radius: 3vmax;
+	border: 2px solid transparent;
+	box-shadow: 0;
+	transition: background-color 200ms, border 200ms, transform 200ms, box-shadow 200ms;
+}
+
+.robotOverviewAnchor .robotOverviewCard:hover {
+	background: var(--secondary-background-color);
+	border: 2px solid white;
+	transform: translateY(-1vh);
+	box-shadow: 0 1vh 20px 0px rgba(255, 255, 255, 0.15);
+}
+
 #sponsorsDiv {
-	width: 100vw;
+	width: 95%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -692,19 +762,22 @@ img.img-contain {
 
 #sponsorsRow {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 50%;
-	padding: 5% 0;
+	flex-wrap: wrap;
+	place-content: center;
+	width: 60%;
+	min-height: 30vh;
+	padding: 3vh 0;
 }
 
 .sponsor {
-	width: 40%;
-	height: 100%;
+	width: max(200px, 15vw);
+	height: 20vh;
 }
 
 .sponsor img {
 	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 #scrollToTop {
@@ -738,6 +811,7 @@ footer {
 	min-height: 15vh;
 	border-top: solid white 2px;
 	background-color: var(--footer-background-color);
+	padding: 1vw;
 }
 
 .footerColumn {
@@ -869,6 +943,7 @@ footer {
 
 #sponsorContactButtons {
 	display: flex;
+	gap: 0.5vw;
 	width: 100%;
 	margin-bottom: 5vh;
 }
@@ -886,13 +961,21 @@ footer {
 	width: 100%;
 	height: 100%;
 	font-size: 2rem;
-	background-color: #337b5c;
-	border: 3px solid white;
 	cursor: pointer;
+	background-color: var(--background-color);
+	border: 3px solid transparent;
+	border-radius: 1ch;
+	transition: border 200ms, background-color 200ms, transform 200ms;
+
+	&:hover {
+		border: 3px solid white;
+		background-color: var(--secondary-background-color);
+		transform: translateY(-10%) scale(101%);
+	}
 }
 
 .sponsorContactButton:nth-child(1)>button {
-	border-radius: 1ch 0ch 0ch 1ch;
+	/* border-radius: 1ch 0ch 0ch 1ch; */
 
 	&:before {
 		content: "";
@@ -905,7 +988,7 @@ footer {
 }
 
 .sponsorContactButton:nth-child(2)>button {
-	border-radius: 0ch 1ch 1ch 0ch;
+	/* border-radius: 0ch 1ch 1ch 0ch; */
 
 	&:before {
 		content: "";
