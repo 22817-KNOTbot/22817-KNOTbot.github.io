@@ -74,8 +74,8 @@
 
 @media (min-width: 1000px) {
 	:root {
-		--content-width: clamp(200px, 60vw, 1500px);
-		--navbar-width: clamp(200px, 60vw, 1500px);
+		--content-width: max(200px, 60vw);
+		--navbar-width: max(200px, 60vw);
 	}
 }
 
