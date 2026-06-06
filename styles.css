@@ -503,9 +503,10 @@ h2 {
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
-	align-items: start;
+	align-items: center;
 	gap: 10%;
 	margin: 0;
+	margin-top: 8vh;
 
 	&>* {
 		max-width: 50%;
@@ -515,15 +516,20 @@ h2 {
 		text-decoration: unset;
 	}
 
-	& h2 {
-		font-size: 2.5em;
-	}
-
 	&>img {
+		width: 40%;
 		height: 100%;
 		border-radius: 1rem;
 		aspect-ratio: 1;
 		object-fit: cover;
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 10vh;
 	}
 }
 
@@ -549,6 +555,7 @@ img.img-contain {
 	height: 100%;
 	filter: brightness(50%);
 	object-fit: cover;
+	object-position: top;
 }
 
 .awardsImgLayer {
